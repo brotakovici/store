@@ -1,0 +1,40 @@
+module.exports = function (app, passport) {
+  
+  app.get('/', function (req, res) {
+   res.render('login.jade');
+  });
+
+  app.get('/login', function (req, res) {
+    res.render('login.jade', { message: req.flash('loginMessage') });
+  });
+
+  // Processing log-in form
+  // app.post('/login', passport stuff here)
+
+  app.get('/signup', function (req, res) {
+    res.render('signup.jade', { message: req.flash('signupMessage') });
+  });
+
+  // Proccessing signup form
+  // app.post('/signup', passport stuff ehre)
+
+  app.get('/profile', isLoggedIn, function (req, res) {
+    res.render('profile.jade', {
+      user : req.user //get the user from the session
+    });
+  });
+
+  app.get('/logout', function (req, res) {
+    req.logout();
+    res.redirect('/');
+  });
+
+  // Make sure the user is logged in
+  function isLoggedIn (req, res, next) {
+    if (req.isAuthenticated) {
+      return next();
+    }
+
+    res.redirect('/');
+  }
+}

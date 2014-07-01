@@ -3,26 +3,26 @@ store
 
 A store system that will include (hopefully) the following:
    
--cart system
-   add to cart
-   remove from cart
--wishlist
-   in stock modifier
-   promotions
+1. Cart system
+  * add to cart
+  * remove from cart
+
+2. Wishlist
+  * in stock modifier
+  * promotions
         
--log-in system
-  register
-  log-in 
+3. Log-in system
+  * register
+  * log-in 
 
--check-out system
-  choose payment: card
-                   paypal
-  shipping cost calculator
-  payment notifier
-  payment system
+4. Check-out system
+  * choose payment:card/paypal
+  * shipping cost calculator
+  * payment notifier
+  * payment system
 
--product system
-  add product
-  remove product
-  edit product
-  stock
+5. Product system
+  * add product
+  * remove product
+  * edit product
+  * stock

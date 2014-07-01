@@ -1,7 +1,18 @@
 doctype html
 html(lang="en")
-  head
-    title = Store
+  head 
+    title Authentication
+    link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css")
+    link(rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css")
+    style body {padding-top:80px; }
+
   body
-    a(href='/login')Login 
-    a(href='/signup')Signup
+    .container
+      .jumbotron.text-center
+        h1
+          span.fa.fa-lock Authentication
+          p Login or Register
+          a(href="/signup").btn.btn-default
+            span.fa.fa-user Signup
+          a(href="/login").btn.btn-default 
+            span.fa.fa-user Login

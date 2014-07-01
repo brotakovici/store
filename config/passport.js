@@ -1,4 +1,4 @@
-var LocalStrategy = require('passport-local').Strategey;
+var LocalStrategy = require('passport-local').Strategy;
 var User = require('../app/models/user');
 
 module.exports= function (passport) {
@@ -21,7 +21,7 @@ module.exports= function (passport) {
   
     function (req, email, password, done) {
       process.nextTick(function () {
-        User.findOne({ 'local.email' : email}, function (err, user) {
+        User.findOne({'local.email' : email}, function (err, user) {
            
           if (err) { 
           return done(err);

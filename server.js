@@ -3,10 +3,10 @@ var app = express();
 var port = process.env.PORT || 8080;
 var mongoose = require('mongoose');
 var passport = require('passport');
-var flash = require('flash');
+var flash = require('connect-flash');
 var morgan = require('morgan');
-var cookieParser = require('cookieParser');
-var bodyParser = require('bodyParser');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var dbconfig = require('./config/dbconfig.js');

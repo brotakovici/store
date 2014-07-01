@@ -7,12 +7,9 @@ var flash = require('connect-flash');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var path = require('path');
 var session = require('express-session');
 
-var dbconfig = require('./config/dbconfig.js');
-
-mongoose.connect(dbconfig.url);
+mongoose.connect('mongodb://localhost/store');
 
 require('./config/passport')(passport);// Pass passport for configuraiton
 

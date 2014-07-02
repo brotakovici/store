@@ -1,0 +1,31 @@
+doctype html
+html
+head
+  title Signup 
+  link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css")
+  link(rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css")
+  style 
+    body {padding-top:80px;}
+
+body
+  .container
+  .col-sm-6.col-sm-offset-3
+    h1 
+      span.fa.fa-sign-in Signup 
+    - if (message !== 'undefined' && message.length > 0) {
+      .alert.alert-danger #{message}
+    - }
+    form(action="/signup" method="post") 
+      .form-group
+        label Email
+        input(type="text" name="email").form-control
+      .form-group
+        label Password
+        input(type="text" name="password").form-control
+    p
+     | Already have an account? 
+     a(href="/login") Log in
+    
+    p 
+     | Or go 
+     a(href="/") home

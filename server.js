@@ -15,7 +15,10 @@ require('./config/passport')(passport);// Pass passport for configuraiton
 
 app.use(morgan('dev'));// Log every request to console
 app.use(cookieParser());// Read from cookies, needed for authentication
-app.use(bodyParser());// Get stuff from HTML forms 
+app.use(bodyParser.json());// Get stuff from HTML forms 
+app.use(bodyParser.urlencoded({
+  extended : true
+}));
 
 app.set('view engine', 'jade');// Jade for templating
 

@@ -11,8 +11,6 @@ var session = require('express-session');
 
 mongoose.connect('mongodb://localhost/store');
 
-require('./config/passport')(passport);// Pass passport for configuraiton
-
 app.use(morgan('dev'));// Log every request to console
 app.use(cookieParser());// Read from cookies, needed for authentication
 app.use(bodyParser.json());// Get stuff from HTML forms 
@@ -24,9 +22,11 @@ app.set('view engine', 'jade');// Jade for templating
 
 // Passport stuff
 app.use(session({ secret: 'amopulacatunprun'})); 
+app.use(flash());// Use connect-flash for flash messages stored in session
 app.use(passport.initialize());
 app.use(passport.session());// Persistent login session
-app.use(flash());// Use connect-flash for flash messages stored in session
+
+require('./config/passport')(passport);// Pass passport for configuraiton
 
 // Routes
 require('./app/routes.js')(app, passport);

@@ -30,7 +30,7 @@ module.exports = function (app, passport) {
 
   app.get('/profile', isLoggedIn, function (req, res) {
     res.render('profile.jade', {
-      user : req.user //get the user from the session
+      user: req.user //get the user from the session
     });
   });
 

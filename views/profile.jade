@@ -1,7 +1,23 @@
 doctype html
 html
-  title My profile
+head
+  title Profile
+  link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  link(rel='stylesheet' href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+  style body {padding-top:80px; word-wrap:break-word;}
 
 body
-  p
-    | Ma cac
+  .container
+    .page-header.text-center
+      h1
+        span.fa.fa-anchor Profile page
+      a(href='/logout').btn.btn-default.btn-sm Logout
+
+    .row
+      .col-sm-6
+        .well
+          h3
+            span.fa.fa-user Local
+            p 
+              strong Email: #{user.local.email}
+              strong Password: #{user.local.password}

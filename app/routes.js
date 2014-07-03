@@ -10,7 +10,12 @@ module.exports = function (app, passport) {
   });
 
   // Processing log-in form
-  // app.post('/login', passport stuff here)
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect: '/profile',
+    failureRedirect: '/login',
+    failureFlash: true
+  }));
+ 
 
   app.get('/signup', function (req, res) {
     res.render('signup.jade', { message: req.flash('signupMessage') });
@@ -18,9 +23,9 @@ module.exports = function (app, passport) {
 
   // Proccessing signup form
   app.post('/signup', passport.authenticate('local-signup', {
-       successRedirect  : '/profile',
-       failureRedirect : '/signup',
-       failureFlash : true
+       successRedirect: '/profile',
+       failureRedirect: '/signup',
+       failureFlash: true
   }));
 
   app.get('/profile', isLoggedIn, function (req, res) {

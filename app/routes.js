@@ -1,13 +1,12 @@
-module.exports = function (app, passport) {
-  
-  app.get('/', function (req, res) {
-   console.log('test');
-   res.render('index.jade');
-  });
 
-  app.get('/login', function (req, res) {
-    res.render('login.jade', { message: req.flash('loginMessage') });
-  });
+module.exports = function (app, passport) {
+  var pages = {
+    user: require('./controllers/user.js'),
+    home: require('./controllers/home.js')
+  }
+  app.get('/', pages.home);
+
+  app.get('/login', pages.user.login); 
 
   // Processing log-in form
   app.post('/login', passport.authenticate('local-login', {
@@ -17,9 +16,7 @@ module.exports = function (app, passport) {
   }));
  
 
-  app.get('/signup', function (req, res) {
-    res.render('signup.jade', { message: req.flash('signupMessage') });
-  });
+  app.get('/signup', pages.user.signup); 
 
   // Proccessing signup form
   app.post('/signup', passport.authenticate('local-signup', {
@@ -28,16 +25,9 @@ module.exports = function (app, passport) {
        failureFlash: true
   }));
 
-  app.get('/profile', isLoggedIn, function (req, res) {
-    res.render('profile.jade', {
-      user: req.user //get the user from the session
-    });
-  });
+  app.get('/profile', isLoggedIn, pages.user.profile); 
 
-  app.get('/logout', function (req, res) {
-    req.logout();
-    res.redirect('/');
-  });
+  app.get('/logout', pages.user.logout); 
 
   // Make sure the user is logged in
   function isLoggedIn (req, res, next) {

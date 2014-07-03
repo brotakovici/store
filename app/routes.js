@@ -41,11 +41,10 @@ module.exports = function (app, passport) {
 
   // Make sure the user is logged in
   function isLoggedIn (req, res, next) {
-    if (req.isAuthenticated) {
-      console.log(req.isAuthenticated);
+    if (req.isAuthenticated()) {
       return next();
     }
 
     res.redirect('/');
-  }
-}
+  };
+};

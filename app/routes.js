@@ -1,4 +1,3 @@
-
 module.exports = function (app, passport) {
   var pages = {
     user: require('./controllers/user.js'),

@@ -6,9 +6,14 @@ var userSchema = mongoose.Schema({
     email : String,
     password : String,
     isAdmin : {
-                type : String, 
+                type : Boolean, 
                 defaul: false
               }
+    phoneNumber : String,
+    city : String,
+    county : String, 
+    address : String,
+    postcode : String
   },
 });
 

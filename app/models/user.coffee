@@ -5,11 +5,8 @@ userSchema = mongoose.Schema({
   local: {
     email: String
     password: String
-    isAdmin: {
-      type: Boolean
-      default: false
-    }
-    phoneNumber: String
+    role: String
+    phone: String
     city: String
     county: String
     address: String

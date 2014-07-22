@@ -1,6 +1,7 @@
 {
   "name": "store",
-  "main": "server.js",
+  "main": "server.coffee",
+  "version": "0.1.0",
   "private": "true",
   "dependencies": {
     "bcrypt": "~0.7.8",

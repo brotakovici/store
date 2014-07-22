@@ -1,7 +1,12 @@
-module.exports = (app, passport) -> 
+module.exports = (app, passport) ->
+  isLoggedIn = (req, res, next) ->
+    if req.isAuthenticated()
+      return next()
+    res.redirect('/')
+
   pages = {
-    user: require('./controllers/user.coffee')
-    home: require('./controllers/home.coffee')
+    user: require('./controllers/user')
+    home: require('./controllers/home')
   }
   app.get('/', pages.home)
   app.get('/login', pages.user.login)
@@ -20,8 +25,3 @@ module.exports = (app, passport) ->
 
   app.get('/profile', isLoggedIn, pages.user.profile)
   app.get('/logout', pages.user.logout)
-
-  isLoggedIn = (req, res, next) ->
-    if req.isAuthenticated()
-      return next()
-    res.redirect('/')

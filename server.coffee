@@ -3,7 +3,7 @@ app = express()
 port = process.env.port || 8080
 mongoose = require('mongoose')
 passport = require('passport')
-flash = require('flash')
+flash = require('connect-flash')
 morgan = require('morgan')
 cookieParser = require('cookie-parser')
 bodyParser = require('body-parser')
@@ -23,7 +23,7 @@ app.set('view engine', 'jade')
 app.use(session({
   secret: 'amopulacatunprun'
 }))
-app.use('flash')
+app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
 

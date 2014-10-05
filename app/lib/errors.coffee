@@ -1,3 +1,3 @@
 module.exports = {
-  invalid_email: 'Emailul nu este valid'
+  invalid_email: 'The email you have provided is invalid'
 }

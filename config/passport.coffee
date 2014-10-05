@@ -17,7 +17,7 @@ module.exports = (app, passport) ->
       passwordField: 'password'
       passReqToCallback: true
     }, (req, email, password, done) ->
-      process.nextTick( -> 
+      process.nextTick( -> ( 
         User.findOne({'local.email': email}, (err, user) =>
           if err
             return done(err)

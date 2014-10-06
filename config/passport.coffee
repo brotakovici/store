@@ -1,7 +1,8 @@
 LocalStrategy = require('passport-local').Strategy
 User = require('../app/models/user')
 
-module.exports = (app, passport) ->
+module.exports = (app, passport) -> 
+  
   passport.serializeUser((user, done) ->
     done(null, user.id)
   )
@@ -17,7 +18,7 @@ module.exports = (app, passport) ->
       passwordField: 'password'
       passReqToCallback: true
     }, (req, email, password, done) ->
-      process.nextTick( -> ( 
+      process.nextTick( ->  
         User.findOne({'local.email': email}, (err, user) =>
           if err
             return done(err)
@@ -35,9 +36,9 @@ module.exports = (app, passport) ->
               return done(null, newUser)
             )
         )
-      )
+       
     )
-  )
+  ))
 
 
   passport.use('local-login', new LocalStrategy({
@@ -56,3 +57,4 @@ module.exports = (app, passport) ->
       )
     )
   )
+

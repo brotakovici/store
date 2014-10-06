@@ -5,11 +5,16 @@ module.exports = (app, passport) ->
       return next()
     res.redirect('/')
 
+  alreadyLogged = (req, res, next) ->
+    if req.isAuthenticated()
+      res.redirect('/profile')
+    return next()
+
   pages = {
     user: require('./controllers/user')
     home: require('./controllers/home')
   }
-  app.get('/', pages.home)
+  app.get('/', alreadyLogged, pages.home)
   app.get('/login', pages.user.login)
   app.post('/login', passport.authenticate('local-login', {
     successRedirect: '/profile'

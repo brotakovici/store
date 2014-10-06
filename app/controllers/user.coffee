@@ -7,6 +7,9 @@ signup = (req, res) ->
 profile = (req, res) ->
   res.render('profile', {user: req.user})
 
+edit = (req, res) ->
+  res.render('edit', {user: req.user})
+
 logout = (req, res) ->
   req.logout()
   res.redirect()

@@ -29,7 +29,7 @@ app.use(passport.session())
 
 require('./config/passport')(app, passport)
 
-require('./app/routes.coffee')(app, routes)
+require('./app/routes.coffee')(app, passport)
 
 app.listen(port, -> (
   console.log('Copii shukari se aduna pe localhost:' + port)

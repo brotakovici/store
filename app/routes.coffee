@@ -19,7 +19,7 @@ module.exports = (app, passport) ->
 
   app.get('/signup', pages.user.signup)
   app.post('/signup', passport.authenticate('local-signup', {
-    succesRedirect: '/profile'
+    successRedirect: '/profile'
     failureRedirect: '/login'
     failueFlash: true
   }))

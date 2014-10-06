@@ -18,5 +18,6 @@ module.exports = {
   login: login
   signup: signup
   profile: profile
+  edit: edit
   logout: logout
 }

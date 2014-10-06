@@ -5,13 +5,13 @@ userSchema = mongoose.Schema({
   local: {
     email: String
     password: String
-    role: String
-    phone: String
-    city: String
-    county: String
-    address: String
-    postcode: String
   }
+  role: String
+  phone: String
+  city: String
+  county: String
+  address: String
+  postcode: String
 })
 
 userSchema.methods.generateHash = (password) ->

@@ -12,7 +12,7 @@ module.exports = (app, passport) ->
   app.get('/', pages.home)
   app.get('/login', pages.user.login)
   app.post('/login', passport.authenticate('local-login', {
-    succesRedirect: '/profile'
+    successRedirect: '/profile'
     failureRedirect: '/login'
     failueFlash: true
   }))
@@ -26,4 +26,4 @@ module.exports = (app, passport) ->
 
   app.get('/profile', isLoggedIn, pages.user.profile)
   app.get('/logout', pages.user.logout)
-  #app.get('/profile', isLoggedIn, pages.user.edit)
+  app.get('/edit', isLoggedIn, pages.user.edit)

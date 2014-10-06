@@ -1,11 +1,11 @@
 login = (req, res) ->
-  res.render(' /login', {user: req.user, message: req.flash('loginMessage')})
+  res.render(' login', {user: req.user, message: req.flash('loginMessage')})
 
 signup = (req, res) ->
-  res.render(' /signup', {user: req.user, message:req.flash('signupMessage')})
+  res.render(' signup', {user: req.user, message:req.flash('signupMessage')})
 
 profile = (req, res) ->
-  res.render(' /profile', {user: req.user})
+  res.render(' profile', {user: req.user})
 
 logout = (req, res) ->
   req.logout()

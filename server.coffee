@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 
+app.set('views', './public/views')
 app.set('view engine', 'jade')
 
 app.use(session({

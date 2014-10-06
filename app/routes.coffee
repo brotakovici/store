@@ -26,4 +26,4 @@ module.exports = (app, passport) ->
 
   app.get('/profile', isLoggedIn, pages.user.profile)
   app.get('/logout', pages.user.logout)
-  app.get('/profile', isLoggedIn, pages.user.edit)
+  #app.get('/profile', isLoggedIn, pages.user.edit)

@@ -2,18 +2,27 @@ doctype html
 html(lang="en")
   head 
     title Edit 
-    link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css")
-    link(rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css")
+    link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css") 
+    link(rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css") 
     style body {padding-top:80px; }
 
   body
     .container
       .jumbotron.text-center
         h1
-          strong Name: #{user.name}
-          strong Email: #{user.local.email}
-          strong Phone: #{user.phone}
-          strong Address: #{user.address}
-          strong City: #{user.city}
-          strong County: #{user.county}
-          strong Postcode: #{user.postcode}
+          input(type="text" value="#{user.name}")#name
+          input(type="text" value=" #{user.local.email}")#email
+          input(type="text" value="#{user.phone}")#phone
+          input(type="text" value="#{user.address}")#address
+          input(type="text" value="#{user.city}")#city
+          input(type="text" value="#{user.county}")#county
+          input(type="text" value="#{user.postcode}")#postcod
+         .row 
+           .col-xs-6
+             .btn.btn-default#save-button Save changes
+           .col-xs-6
+             .btn.btn-default#cancel-button Cancel
+
+block scripts 
+  include default-scripts
+  script(src="/js/edit.js")

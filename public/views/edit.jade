@@ -10,12 +10,19 @@ html(lang="en")
     .container
       .jumbotron.text-center
         h1
+          div Name
           input(type="text" value="#{user.name}")#name
+          div Email
           input(type="text" value=" #{user.local.email}")#email
+          div Phone
           input(type="text" value="#{user.phone}")#phone
+          div Address
           input(type="text" value="#{user.address}")#address
+          div City
           input(type="text" value="#{user.city}")#city
+          div County
           input(type="text" value="#{user.county}")#county
+          div Postcode
           input(type="text" value="#{user.postcode}")#postcod
          .row 
            .col-xs-6

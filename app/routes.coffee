@@ -16,7 +16,7 @@ module.exports = (app, passport) ->
   }
   
   api = {
-    user: require('./controllers/user_api')
+    user: require('./controllers/api/user')
   }
   app.get('/', alreadyLogged, pages.home)
   app.get('/login', pages.user.login)

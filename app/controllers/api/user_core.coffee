@@ -107,7 +107,7 @@ login =  (values, done) ->
     return done(null, user)
   )
 
-edit = (values, done) ->
+edit = (values, user, done) ->
   err = null
   
   validatePermissions = (values, user, done) ->

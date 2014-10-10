@@ -1,8 +1,8 @@
 user = require('./api/user_core')
 
 edit = (req, res) ->
-  console.log req.body
-
+  req.body.user = JSON.parse(req.body.user)
+  req.user.isAthenticated = req.isAuthenticated()
 module.exports = {
   edit: edit
 }

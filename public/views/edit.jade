@@ -10,6 +10,7 @@ html(lang="en")
     .container
       .jumbotron.text-center
         h1
+          input(type='hidden' value="#{user._id}")#id
           div Name
           input(type="text" value="#{user.name}")#name
           div Email

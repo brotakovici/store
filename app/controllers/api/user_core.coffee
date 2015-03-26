@@ -109,12 +109,15 @@ login =  (values, done) ->
 
 edit = (values, user, done) ->
   err = null
-  
+  console.log "Gotten here"
   validatePermissions = (values, user, done) ->
+    console.log "Permission check"
     if !user.isAuthenticated
       err = errors.permission_denied
       return done(err)
+    console.log "Checked authentication"
     User.findById(user._id, (err, doc) =>
+      console.log "Searchin user"
       if err?
         console.log err
         err = errors.database_error
@@ -123,12 +126,12 @@ edit = (values, user, done) ->
       if !doc?
         err = errors.no_user_found
         return done(err)
-
+      console.log "Validation was ok"
       return done(null)
     )
 
     editUser = (user, values, done) ->
-      editableFields = ['firstName', 'lastName', 'phone', 'city', 'county', 'address', 'postcode']
+      editableFields = ['name', 'local.email', 'phone', 'city', 'county', 'address', 'postcode']
       for field in editableFields
         if values[field]?
           user[field] = values[field]

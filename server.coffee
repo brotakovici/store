@@ -23,6 +23,8 @@ app.set('view engine', 'jade')
 app.use(express.static(__dirname + '/public'))
 app.use(session({
   secret: 'amopulacatunprun'
+  resave: true
+  saveUninitialized: true
 }))
 app.use(flash())
 app.use(passport.initialize())

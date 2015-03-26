@@ -28,7 +28,7 @@ attachEventListener(elemSaveBtn, 'click', function() {
   };
 
   HTTPRequest.put('/edit', data, function(status, header, content){
-    // Error mngmnt goes here!!
+    // Error management goes here!!
     document.location = '/profile';
   });
 });

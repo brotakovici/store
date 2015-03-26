@@ -10,21 +10,28 @@ html(lang="en")
     .container
       .jumbotron.text-center
         h1
+          - var name = user.name ? user.name : " ";
+          - var email = user.local.email ? user.local.email : " ";
+          - var phone = user.phone ? user.phone : " ";
+          - var address = user.address ? user.address : " ";
+          - var city = user.city ? user.city : " ";
+          - var county = user.county ? user.county : " ";
+          - var postcode = user.postcode ? user.postcode : " ";
           input(type='hidden' value="#{user._id}")#id
           div Name
-          input(type="text" value="#{user.name}")#name
+          input(type="text" value="#{name}")#name
           div Email
-          input(type="text" value=" #{user.local.email}")#email
+          input(type="text" value=" #{email}")#email
           div Phone
-          input(type="text" value="#{user.phone}")#phone
+          input(type="text" value="#{phone}")#phone
           div Address
-          input(type="text" value="#{user.address}")#address
+          input(type="text" value="#{address}")#address
           div City
-          input(type="text" value="#{user.city}")#city
+          input(type="text" value="#{city}")#city
           div County
-          input(type="text" value="#{user.county}")#county
+          input(type="text" value="#{county}")#county
           div Postcode
-          input(type="text" value="#{user.postcode}")#postcod
+          input(type="text" value="#{postcode}")#postcod
          .row 
            .col-xs-6
              .btn.btn-default#save-button Save changes

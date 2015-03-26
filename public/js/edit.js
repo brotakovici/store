@@ -21,16 +21,20 @@ attachEventListener(elemSaveBtn, 'click', function() {
     'name': elemName.value,
     'local.email': elemEmail.value,
     'phone': elemPhone.value,
-    'address': elemAddress,
+    'address': elemAddress.value,
     'city': elemCity.value,
-    'county': elemCounty,
-    'postcode': elemPostcode
+    'county': elemCounty.value,
+    'postcode': elemPostcode.value
   };
 
   HTTPRequest.put('/edit', data, function(status, header, content){
     // Error management goes here!!
     document.location = '/profile';
   });
+});
+
+attachEventListener(elemCancelBtn, 'click', function (){
+  document.location = "/profile"; 
 });
 
 })();

@@ -110,6 +110,8 @@ login =  (values, done) ->
 edit = (values, user, done) ->
   err = null
   console.log "Gotten here"
+  console.log user
+  console.log values
   validatePermissions = (values, user, done) ->
     console.log "Permission check"
     if !user.isAuthenticated
@@ -143,7 +145,7 @@ edit = (values, user, done) ->
           return done(err, doc)
         return done(err, doc)
       )
-
+      console.log "WATERFALLLLLL"
       async.waterfall([
         (done) =>
           validatePermissions(values, user, done) 

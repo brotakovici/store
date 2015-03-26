@@ -2,9 +2,10 @@ user = require('./user_core')
 
 edit = (req, res) ->
   console.log req.body
-  #req.body.user = JSON.parse(req.body)
-  req.body.isAuthenticated = req.isAuthenticated()
-  user.edit(req.body, req.body, (err, doc) ->
+  user._id = req.body._id
+  user.isAuthenticated = req.isAuthenticated()
+  data = req.body
+  user.edit(data, user, (err, doc) ->
     if err?
       console.log err
     if !doc

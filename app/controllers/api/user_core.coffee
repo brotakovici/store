@@ -3,14 +3,14 @@ async = require('async')
 errors  = require('../../lib/errors')
 
 validateUserValuePresence = (values, done) ->
-  areAllFieldsCompleted = values.local? && values.local.email? &&
+  ###areAllFieldsCompleted = values.local? && values.local.email? &&
     values.local.password? && values.firstName? &&
     values.lastName? && values.phone?
 
   if !areAllFieldsCompleted
     err = errors.user_invalid_arguments
     return done(err)
-
+  ###
   return done(null)
 
 validateUserValues = (values, done) ->
@@ -106,58 +106,56 @@ login =  (values, done) ->
 
     return done(null, user)
   )
+  
+validatePermissions = (values, user, done) ->
+  console.log "Permission check"
+  if !user.isAuthenticated
+    err = errors.permission_denied
+    return done(err)
+  console.log "Checked authentication"
+  User.findById(user._id, (err, doc) =>
+    console.log "Searchin user"
+    if err?
+      console.log err
+      err = errors.database_error
+      return done(err)
+    
+    if !doc?
+      err = errors.no_user_found
+      return done(err)
+    console.log "Validation was ok"
+    return done(null)
+  )
+    
+editUser = (user, values, done) ->
+  editableFields = ['name', 'local.email', 'phone', 'city', 'county', 'address', 'postcode']
+  for field in editableFields
+    if values[field]?
+      user[field] = values[field]
+  
+  user.save((err, doc) =>
+    if err
+      console.log err
+      err = errors.database_error
+      return done(err, doc)
+    return done(err, doc)
+  )
 
 edit = (values, user, done) ->
   err = null
-  console.log "Gotten here"
-  console.log user
-  console.log values
-  validatePermissions = (values, user, done) ->
-    console.log "Permission check"
-    if !user.isAuthenticated
-      err = errors.permission_denied
-      return done(err)
-    console.log "Checked authentication"
-    User.findById(user._id, (err, doc) =>
-      console.log "Searchin user"
-      if err?
-        console.log err
-        err = errors.database_error
-        return done(err)
-      
-      if !doc?
-        err = errors.no_user_found
-        return done(err)
-      console.log "Validation was ok"
-      return done(null)
-    )
 
-    editUser = (user, values, done) ->
-      editableFields = ['name', 'local.email', 'phone', 'city', 'county', 'address', 'postcode']
-      for field in editableFields
-        if values[field]?
-          user[field] = values[field]
-      
-      user.save((err, doc) =>
-        if err
-          console.log err
-          err = errors.database_error
-          return done(err, doc)
-        return done(err, doc)
-      )
-      console.log "WATERFALLLLLL"
-      async.waterfall([
-        (done) =>
-          validatePermissions(values, user, done) 
-        (done) =>
-          validateUserValues(user, done)
-        (done) =>
-          User.findById(user._id, done)
-        (done) =>
-          editUser(user, values, done)
-      ], ((err, nrAffected) =>
-        return done(err, nrAffected)
-      ))
+  async.waterfall([
+    (done) =>
+      validatePermissions(values, user, done) 
+    (done) =>
+      validateUserValues(user, done)
+    (done) =>
+      User.findById(user._id, done)
+    (done) =>
+      editUser(user, values, done)
+  ], ((err, nrAffected) =>
+    return done(err, nrAffected)
+  ))
 
 module.exports = {
   add: add

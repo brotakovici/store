@@ -1,5 +1,6 @@
 user = require('./user_core')
 
+#Edits a user.
 edit = (req, res) ->
   console.log req.body
   user._id = req.body._id
@@ -10,11 +11,13 @@ edit = (req, res) ->
       console.log err
     if !doc
       console.log 'Nu e bine'
+    console.log doc
   )
 
 one = (req, res) ->
   console.log req.body
 
+#Gets user details for logged in user using id stored in session.
 self = (req, res) ->
   user.one(req.user._id, (err, doc) ->
     if err?

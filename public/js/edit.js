@@ -11,18 +11,26 @@ var elemCity = document.getElementById('city');
 var elemCounty = document.getElementById('county');  
 var elemPostcode = document.getElementById('postcode');  
 
+var emptyIfNull = function (string) {
+  if(string == null || string == 'undefined')
+    return '';
+  else 
+    return string;
+};
+
 var getCurrentUserDetails = function() {
   HTTPRequest.get('/user/self', function(status, header, content){
     content = JSON.parse(content);
-    elemFirstName.value = content.firstName;
-    elemMiddleName.value = content.middleName;
-    elemLastName.value = content.lastName;
-    elemEmail.value = content.local.email;
-    elemPhone.value = content.phone;
-    elemAddress.value = content.address;
-    elemCity.value = content.city;
-    elemCounty.value = content.county;
-    elemPostcode.value = content.postcode;
+    elemFirstName.value = emptyIfNull(content.firstName);
+    elemMiddleName.value = emptyIfNull(content.middleName);
+    elemLastName.value = emptyIfNull(content.lastName);
+    elemEmail.value = emptyIfNull(content.local.email);
+    elemPhone.value = emptyIfNull(content.phone);
+    elemAddress.value = emptyIfNull(content.address);
+    elemCity.value = emptyIfNull(content.city);
+    elemCounty.value = emptyIfNull(content.county);
+    elemPostcode.value = emptyIfNull(content.postcode);
+
     
   });
 };
@@ -38,7 +46,9 @@ attachEventListener(elemSaveBtn, 'click', function() {
   
   var data = {
     '_id': elemId.value, 
-    'name': elemName.value,
+    'firstName': elemFirstName.value,
+    'lastName': elemLastName.value,
+    'middleName': elemMiddleName.value,
     'local.email': elemEmail.value,
     'phone': elemPhone.value,
     'address': elemAddress.value,

@@ -128,7 +128,7 @@ validatePermissions = (values, user, done) ->
   )
     
 editUser = (user, values, done) ->
-  editableFields = ['name', 'local.email', 'phone', 'city', 'county', 'address', 'postcode']
+  editableFields = ['firstName', 'middleName', 'lastName', 'local.email', 'phone', 'city', 'county', 'address', 'postcode']
   for field in editableFields
     if values[field]?
       user[field] = values[field]

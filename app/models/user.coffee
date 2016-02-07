@@ -6,6 +6,9 @@ userSchema = mongoose.Schema({
     email: String
     password: String
   }
+  firstName: String
+  middleName: String
+  lastName: String
   role: String
   phone: String
   city: String

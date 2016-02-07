@@ -1,13 +1,4 @@
 (function(){
-
-var getCurrentUserDetails = function() {
-  HTTPRequest.get('/user/self', function(status, header, content){
-    console.log(content);
-  });
-};
-
-getCurrentUserDetails();
-  
 // Inputs!
 var elemId = document.getElementById('id');
 var elemName = document.getElementById('name');  
@@ -17,6 +8,18 @@ var elemAddress = document.getElementById('address');
 var elemCity = document.getElementById('city');  
 var elemCounty = document.getElementById('county');  
 var elemPostcode = document.getElementById('postcode');  
+
+var getCurrentUserDetails = function() {
+  HTTPRequest.get('/user/self', function(status, header, content){
+    console.log(content);
+    elemName.value = content.name;
+    elemEmail.value = content.local.email;
+    elemPhone.value = content.phone;
+  });
+};
+
+getCurrentUserDetails();
+  
 
 // Buttons!
 var elemSaveBtn = document.getElementById('save-button');

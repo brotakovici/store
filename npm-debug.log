@@ -1,0 +1,486 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
+4 verbose install where, deps [ '/Users/DMNDPL1/Projects/store',
+4 verbose install   [ 'bcrypt',
+4 verbose install     'connect-flash',
+4 verbose install     'cookieparser',
+4 verbose install     'passport',
+4 verbose install     'express-session',
+4 verbose install     'express',
+4 verbose install     'stylus',
+4 verbose install     'jade',
+4 verbose install     'mongoose',
+4 verbose install     'morgan',
+4 verbose install     'passport-local',
+4 verbose install     'cookie-parser',
+4 verbose install     'body-parser',
+4 verbose install     'bcrypt-nodejs',
+4 verbose install     'async',
+4 verbose install     'coffee-script',
+4 verbose install     'HTTPRequest' ] ]
+5 verbose install where, peers [ '/Users/DMNDPL1/Projects/store', [] ]
+6 info preinstall store@0.1.0
+7 warn package.json path@0.11.14 path is also the name of a node core module.
+8 verbose already installed skipping express@~4.12.3 /Users/DMNDPL1/Projects/store
+9 verbose already installed skipping stylus@~0.50.0 /Users/DMNDPL1/Projects/store
+10 verbose already installed skipping jade@~1.9.2 /Users/DMNDPL1/Projects/store
+11 verbose already installed skipping mongoose@4.0.0 /Users/DMNDPL1/Projects/store
+12 verbose already installed skipping morgan@~1.5.2 /Users/DMNDPL1/Projects/store
+13 verbose already installed skipping passport-local@~1.0.0 /Users/DMNDPL1/Projects/store
+14 verbose already installed skipping cookie-parser@~1.3.4 /Users/DMNDPL1/Projects/store
+15 verbose already installed skipping body-parser@~1.12.2 /Users/DMNDPL1/Projects/store
+16 verbose already installed skipping bcrypt-nodejs@0.0.3 /Users/DMNDPL1/Projects/store
+17 verbose already installed skipping async@~0.9.0 /Users/DMNDPL1/Projects/store
+18 verbose already installed skipping coffee-script@~1.9.1 /Users/DMNDPL1/Projects/store
+19 verbose already installed skipping HTTPRequest@~0.1.1 /Users/DMNDPL1/Projects/store
+20 silly cache add args [ 'bcrypt@0.8', null ]
+21 verbose cache add spec bcrypt@0.8
+22 silly cache add parsed spec { raw: 'bcrypt@0.8',
+22 silly cache add   scope: null,
+22 silly cache add   name: 'bcrypt',
+22 silly cache add   rawSpec: '0.8',
+22 silly cache add   spec: '>=0.8.0 <0.9.0',
+22 silly cache add   type: 'range' }
+23 verbose addNamed bcrypt@>=0.8.0 <0.9.0
+24 silly addNamed semver.valid null
+25 silly addNamed semver.validRange >=0.8.0 <0.9.0
+26 silly addNameRange { name: 'bcrypt', range: '>=0.8.0 <0.9.0', hasData: false }
+27 silly mapToRegistry name bcrypt
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry uri https://registry.npmjs.org/bcrypt
+31 verbose addNameRange registry:https://registry.npmjs.org/bcrypt not in flight; fetching
+32 verbose already installed skipping connect-flash@~0.1.1 /Users/DMNDPL1/Projects/store
+33 verbose already installed skipping cookieparser@~0.1.0 /Users/DMNDPL1/Projects/store
+34 verbose already installed skipping passport@~0.2.1 /Users/DMNDPL1/Projects/store
+35 verbose already installed skipping express-session@~1.10.4 /Users/DMNDPL1/Projects/store
+36 verbose get https://registry.npmjs.org/bcrypt not expired, no request
+37 silly addNameRange number 2 { name: 'bcrypt', range: '>=0.8.0 <0.9.0', hasData: true }
+38 silly addNameRange versions [ 'bcrypt',
+38 silly addNameRange   [ '0.1.2',
+38 silly addNameRange     '0.2.0',
+38 silly addNameRange     '0.2.1',
+38 silly addNameRange     '0.1.3',
+38 silly addNameRange     '0.2.2',
+38 silly addNameRange     '0.2.3',
+38 silly addNameRange     '0.2.4',
+38 silly addNameRange     '0.3.0',
+38 silly addNameRange     '0.3.1',
+38 silly addNameRange     '0.3.2',
+38 silly addNameRange     '0.4.0',
+38 silly addNameRange     '0.4.1',
+38 silly addNameRange     '0.5.0',
+38 silly addNameRange     '0.6.0',
+38 silly addNameRange     '0.7.0',
+38 silly addNameRange     '0.7.1',
+38 silly addNameRange     '0.7.2',
+38 silly addNameRange     '0.7.3',
+38 silly addNameRange     '0.7.4',
+38 silly addNameRange     '0.7.5',
+38 silly addNameRange     '0.7.6',
+38 silly addNameRange     '0.7.7',
+38 silly addNameRange     '0.7.8',
+38 silly addNameRange     '0.8.0',
+38 silly addNameRange     '0.8.1',
+38 silly addNameRange     '0.8.2',
+38 silly addNameRange     '0.8.3',
+38 silly addNameRange     '0.8.4',
+38 silly addNameRange     '0.8.5' ] ]
+39 verbose addNamed bcrypt@0.8.5
+40 silly addNamed semver.valid 0.8.5
+41 silly addNamed semver.validRange 0.8.5
+42 silly cache afterAdd bcrypt@0.8.5
+43 verbose afterAdd /Users/DMNDPL1/.npm/bcrypt/0.8.5/package/package.json not in flight; writing
+44 verbose afterAdd /Users/DMNDPL1/.npm/bcrypt/0.8.5/package/package.json written
+45 silly install resolved [ { name: 'bcrypt',
+45 silly install resolved     description: 'A bcrypt library for NodeJS.',
+45 silly install resolved     keywords:
+45 silly install resolved      [ 'bcrypt',
+45 silly install resolved        'password',
+45 silly install resolved        'auth',
+45 silly install resolved        'authentication',
+45 silly install resolved        'encryption',
+45 silly install resolved        'crypt',
+45 silly install resolved        'crypto' ],
+45 silly install resolved     main: './bcrypt',
+45 silly install resolved     version: '0.8.5',
+45 silly install resolved     author: { name: 'Nick Campbell', url: 'https://github.com/ncb000gt' },
+45 silly install resolved     engines: { node: '>= 0.6.0' },
+45 silly install resolved     repository:
+45 silly install resolved      { type: 'git',
+45 silly install resolved        url: 'git+https://github.com/ncb000gt/node.bcrypt.js.git' },
+45 silly install resolved     license: 'MIT',
+45 silly install resolved     bugs: { url: 'https://github.com/ncb000gt/node.bcrypt.js/issues' },
+45 silly install resolved     scripts:
+45 silly install resolved      { test: 'node-gyp configure build && nodeunit test',
+45 silly install resolved        install: 'node-gyp rebuild' },
+45 silly install resolved     dependencies: { bindings: '1.2.1', nan: '2.0.5' },
+45 silly install resolved     devDependencies: { nodeunit: '~0.9.1' },
+45 silly install resolved     contributors:
+45 silly install resolved      [ [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object],
+45 silly install resolved        [Object] ],
+45 silly install resolved     gypfile: true,
+45 silly install resolved     gitHead: '5d97708f06754d7d7989c67ba867002d10013615',
+45 silly install resolved     homepage: 'https://github.com/ncb000gt/node.bcrypt.js#readme',
+45 silly install resolved     _id: 'bcrypt@0.8.5',
+45 silly install resolved     _shasum: '8e5b81b4db80e944f440005979ca8d58a961861d',
+45 silly install resolved     _from: 'bcrypt@>=0.8.0 <0.9.0',
+45 silly install resolved     _npmVersion: '2.13.3',
+45 silly install resolved     _nodeVersion: '3.0.0',
+45 silly install resolved     _npmUser: { name: 'defunctzombie', email: 'shtylman@gmail.com' },
+45 silly install resolved     dist:
+45 silly install resolved      { shasum: '8e5b81b4db80e944f440005979ca8d58a961861d',
+45 silly install resolved        tarball: 'http://registry.npmjs.org/bcrypt/-/bcrypt-0.8.5.tgz' },
+45 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+45 silly install resolved     directories: {},
+45 silly install resolved     _resolved: 'https://registry.npmjs.org/bcrypt/-/bcrypt-0.8.5.tgz',
+45 silly install resolved     readme: 'ERROR: No README data found!' } ]
+46 info install bcrypt@0.8.5 into /Users/DMNDPL1/Projects/store
+47 info installOne bcrypt@0.8.5
+48 verbose installOne of bcrypt to /Users/DMNDPL1/Projects/store not in flight; installing
+49 verbose lock using /Users/DMNDPL1/.npm/_locks/bcrypt-37c106b92f59b646.lock for /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+50 silly install write writing bcrypt 0.8.5 to /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+51 silly cache addNamed cb bcrypt@0.8.5
+52 verbose unbuild node_modules/bcrypt
+53 verbose gentlyRm vacuuming /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+54 verbose tar unpack /Users/DMNDPL1/.npm/bcrypt/0.8.5/package.tgz
+55 verbose tar unpacking to /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+56 verbose gentlyRm vacuuming /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+57 silly gunzTarPerm modes [ '755', '644' ]
+58 silly gunzTarPerm extractEntry package.json
+59 silly gunzTarPerm extractEntry .npmignore
+60 silly gunzTarPerm extractEntry README.md
+61 silly gunzTarPerm extractEntry LICENSE
+62 silly gunzTarPerm extractEntry bcrypt.js
+63 silly gunzTarPerm extractEntry binding.gyp
+64 silly gunzTarPerm extractEntry .travis.yml
+65 silly gunzTarPerm extractEntry CHANGELOG.md
+66 silly gunzTarPerm extractEntry examples/async_compare.js
+67 silly gunzTarPerm extractEntry examples/forever_gen_salt.js
+68 silly gunzTarPerm extractEntry test/async.js
+69 silly gunzTarPerm extractEntry test/repetitions.js
+70 silly gunzTarPerm extractEntry test/sync.js
+71 silly gunzTarPerm extractEntry Makefile
+72 silly gunzTarPerm extractEntry src/bcrypt.cc
+73 silly gunzTarPerm extractEntry src/bcrypt_node.cc
+74 silly gunzTarPerm extractEntry src/blowfish.cc
+75 silly gunzTarPerm extractEntry src/node_blf.h
+76 silly gunzTarPerm extractEntry werker.yml
+77 info preinstall bcrypt@0.8.5
+78 silly prepareForInstallMany adding bindings@1.2.1 from bcrypt dependencies
+79 silly prepareForInstallMany adding nan@2.0.5 from bcrypt dependencies
+80 silly cache add args [ 'bindings@1.2.1', null ]
+81 verbose cache add spec bindings@1.2.1
+82 silly cache add args [ 'nan@2.0.5', null ]
+83 verbose cache add spec nan@2.0.5
+84 silly cache add parsed spec { raw: 'bindings@1.2.1',
+84 silly cache add   scope: null,
+84 silly cache add   name: 'bindings',
+84 silly cache add   rawSpec: '1.2.1',
+84 silly cache add   spec: '1.2.1',
+84 silly cache add   type: 'version' }
+85 verbose addNamed bindings@1.2.1
+86 silly addNamed semver.valid 1.2.1
+87 silly addNamed semver.validRange 1.2.1
+88 silly mapToRegistry name bindings
+89 silly mapToRegistry using default registry
+90 silly mapToRegistry registry https://registry.npmjs.org/
+91 silly mapToRegistry uri https://registry.npmjs.org/bindings
+92 verbose addNameVersion registry:https://registry.npmjs.org/bindings not in flight; fetching
+93 silly cache add parsed spec { raw: 'nan@2.0.5',
+93 silly cache add   scope: null,
+93 silly cache add   name: 'nan',
+93 silly cache add   rawSpec: '2.0.5',
+93 silly cache add   spec: '2.0.5',
+93 silly cache add   type: 'version' }
+94 verbose addNamed nan@2.0.5
+95 silly addNamed semver.valid 2.0.5
+96 silly addNamed semver.validRange 2.0.5
+97 silly mapToRegistry name nan
+98 silly mapToRegistry using default registry
+99 silly mapToRegistry registry https://registry.npmjs.org/
+100 silly mapToRegistry uri https://registry.npmjs.org/nan
+101 verbose addNameVersion registry:https://registry.npmjs.org/nan not in flight; fetching
+102 verbose get https://registry.npmjs.org/bindings not expired, no request
+103 verbose get https://registry.npmjs.org/nan not expired, no request
+104 silly cache afterAdd bindings@1.2.1
+105 verbose afterAdd /Users/DMNDPL1/.npm/bindings/1.2.1/package/package.json not in flight; writing
+106 silly cache afterAdd nan@2.0.5
+107 verbose afterAdd /Users/DMNDPL1/.npm/nan/2.0.5/package/package.json not in flight; writing
+108 verbose afterAdd /Users/DMNDPL1/.npm/bindings/1.2.1/package/package.json written
+109 verbose afterAdd /Users/DMNDPL1/.npm/nan/2.0.5/package/package.json written
+110 silly install resolved [ { name: 'bindings',
+110 silly install resolved     description: 'Helper module for loading your native module\'s .node file',
+110 silly install resolved     keywords: [ 'native', 'addon', 'bindings', 'gyp', 'waf', 'c', 'c++' ],
+110 silly install resolved     version: '1.2.1',
+110 silly install resolved     author:
+110 silly install resolved      { name: 'Nathan Rajlich',
+110 silly install resolved        email: 'nathan@tootallnate.net',
+110 silly install resolved        url: 'http://tootallnate.net' },
+110 silly install resolved     repository:
+110 silly install resolved      { type: 'git',
+110 silly install resolved        url: 'git://github.com/TooTallNate/node-bindings.git' },
+110 silly install resolved     main: './bindings.js',
+110 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/node-bindings/issues' },
+110 silly install resolved     homepage: 'https://github.com/TooTallNate/node-bindings',
+110 silly install resolved     license: 'MIT',
+110 silly install resolved     gitHead: 'e404152ee27f8478ccbc7122ee051246e8e5ec02',
+110 silly install resolved     _id: 'bindings@1.2.1',
+110 silly install resolved     scripts: {},
+110 silly install resolved     _shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+110 silly install resolved     _from: 'bindings@1.2.1',
+110 silly install resolved     _npmVersion: '1.4.14',
+110 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+110 silly install resolved     maintainers: [ [Object], [Object] ],
+110 silly install resolved     dist:
+110 silly install resolved      { shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+110 silly install resolved        tarball: 'http://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz' },
+110 silly install resolved     directories: {},
+110 silly install resolved     _resolved: 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz',
+110 silly install resolved     readme: 'ERROR: No README data found!' },
+110 silly install resolved   { name: 'nan',
+110 silly install resolved     version: '2.0.5',
+110 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+110 silly install resolved     main: 'include_dirs.js',
+110 silly install resolved     repository: { type: 'git', url: 'git://github.com/nodejs/nan.git' },
+110 silly install resolved     scripts:
+110 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+110 silly install resolved        'rebuild-tests': 'pangyp rebuild --msvs_version=2013 --directory test',
+110 silly install resolved        docs: 'doc/.build.sh' },
+110 silly install resolved     contributors:
+110 silly install resolved      [ [Object],
+110 silly install resolved        [Object],
+110 silly install resolved        [Object],
+110 silly install resolved        [Object],
+110 silly install resolved        [Object],
+110 silly install resolved        [Object],
+110 silly install resolved        [Object] ],
+110 silly install resolved     devDependencies:
+110 silly install resolved      { bindings: '~1.2.1',
+110 silly install resolved        'node-gyp': '~2.0.2',
+110 silly install resolved        pangyp: '~2.2.0',
+110 silly install resolved        tap: '~0.7.1',
+110 silly install resolved        xtend: '~4.0.0' },
+110 silly install resolved     license: 'MIT',
+110 silly install resolved     gitHead: 'd13a2e9ce762fd130877b53c71d35963fa2cf689',
+110 silly install resolved     bugs: { url: 'https://github.com/nodejs/nan/issues' },
+110 silly install resolved     homepage: 'https://github.com/nodejs/nan#readme',
+110 silly install resolved     _id: 'nan@2.0.5',
+110 silly install resolved     _shasum: '365888014be1fd178db0cbfa258edf7b0cb1c408',
+110 silly install resolved     _from: 'nan@2.0.5',
+110 silly install resolved     _npmVersion: '2.13.3',
+110 silly install resolved     _nodeVersion: '3.0.0',
+110 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+110 silly install resolved     maintainers: [ [Object], [Object] ],
+110 silly install resolved     dist:
+110 silly install resolved      { shasum: '365888014be1fd178db0cbfa258edf7b0cb1c408',
+110 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-2.0.5.tgz' },
+110 silly install resolved     directories: {},
+110 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-2.0.5.tgz',
+110 silly install resolved     readme: 'ERROR: No README data found!' } ]
+111 info install bindings@1.2.1 into /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+112 info install nan@2.0.5 into /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+113 info installOne bindings@1.2.1
+114 verbose installOne of bindings to /Users/DMNDPL1/Projects/store/node_modules/bcrypt not in flight; installing
+115 info installOne nan@2.0.5
+116 verbose installOne of nan to /Users/DMNDPL1/Projects/store/node_modules/bcrypt not in flight; installing
+117 verbose lock using /Users/DMNDPL1/.npm/_locks/bindings-6a613139cd346a81.lock for /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/bindings
+118 verbose lock using /Users/DMNDPL1/.npm/_locks/nan-b37cf18d4a725bf8.lock for /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/nan
+119 silly install write writing bindings 1.2.1 to /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/bindings
+120 silly cache addNamed cb bindings@1.2.1
+121 verbose unbuild node_modules/bcrypt/node_modules/bindings
+122 silly install write writing nan 2.0.5 to /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/nan
+123 silly cache addNamed cb nan@2.0.5
+124 verbose unbuild node_modules/bcrypt/node_modules/nan
+125 verbose gentlyRm vacuuming /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/bindings
+126 verbose gentlyRm vacuuming /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/nan
+127 verbose tar unpack /Users/DMNDPL1/.npm/bindings/1.2.1/package.tgz
+128 verbose tar unpacking to /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/bindings
+129 verbose gentlyRm vacuuming /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/bindings
+130 verbose tar unpack /Users/DMNDPL1/.npm/nan/2.0.5/package.tgz
+131 verbose tar unpacking to /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/nan
+132 verbose gentlyRm vacuuming /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/nan
+133 silly gunzTarPerm modes [ '755', '644' ]
+134 silly gunzTarPerm modes [ '755', '644' ]
+135 silly gunzTarPerm extractEntry package.json
+136 silly gunzTarPerm extractEntry package.json
+137 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+138 silly gunzTarPerm extractEntry README.md
+139 silly gunzTarPerm extractEntry bindings.js
+140 silly gunzTarPerm extractEntry README.md
+141 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+142 silly gunzTarPerm extractEntry include_dirs.js
+143 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
+144 silly gunzTarPerm extractEntry nan_converters.h
+145 silly gunzTarPerm modified mode [ 'nan_converters.h', 436, 420 ]
+146 silly gunzTarPerm extractEntry LICENSE.md
+147 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+148 silly gunzTarPerm extractEntry .dntrc
+149 silly gunzTarPerm modified mode [ '.dntrc', 436, 420 ]
+150 silly gunzTarPerm extractEntry appveyor.yml
+151 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 420 ]
+152 info preinstall bindings@1.2.1
+153 silly gunzTarPerm extractEntry doc/new.md
+154 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 420 ]
+155 silly gunzTarPerm extractEntry doc/.build.sh
+156 silly gunzTarPerm modified mode [ 'doc/.build.sh', 509, 493 ]
+157 silly install resolved []
+158 verbose about to build /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/bindings
+159 info build /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/bindings
+160 verbose linkStuff [ false,
+160 verbose linkStuff   false,
+160 verbose linkStuff   false,
+160 verbose linkStuff   '/Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules' ]
+161 info linkStuff bindings@1.2.1
+162 verbose linkBins bindings@1.2.1
+163 verbose linkMans bindings@1.2.1
+164 verbose rebuildBundles bindings@1.2.1
+165 info install bindings@1.2.1
+166 info postinstall bindings@1.2.1
+167 verbose unlock done using /Users/DMNDPL1/.npm/_locks/bindings-6a613139cd346a81.lock for /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/bindings
+168 silly gunzTarPerm extractEntry doc/buffers.md
+169 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 420 ]
+170 silly gunzTarPerm extractEntry doc/callback.md
+171 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 420 ]
+172 silly gunzTarPerm extractEntry doc/converters.md
+173 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 420 ]
+174 silly gunzTarPerm extractEntry doc/errors.md
+175 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 420 ]
+176 silly gunzTarPerm extractEntry doc/maybe_types.md
+177 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 420 ]
+178 silly gunzTarPerm extractEntry doc/methods.md
+179 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 420 ]
+180 silly gunzTarPerm extractEntry doc/asyncworker.md
+181 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 420 ]
+182 silly gunzTarPerm extractEntry doc/node_misc.md
+183 silly gunzTarPerm modified mode [ 'doc/node_misc.md', 436, 420 ]
+184 silly gunzTarPerm extractEntry doc/persistent.md
+185 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 420 ]
+186 silly gunzTarPerm extractEntry doc/scopes.md
+187 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 420 ]
+188 silly gunzTarPerm extractEntry doc/script.md
+189 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 420 ]
+190 silly gunzTarPerm extractEntry doc/string_bytes.md
+191 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 420 ]
+192 silly gunzTarPerm extractEntry doc/v8_internals.md
+193 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 420 ]
+194 silly gunzTarPerm extractEntry doc/v8_misc.md
+195 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 420 ]
+196 silly gunzTarPerm extractEntry nan.h
+197 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+198 silly gunzTarPerm extractEntry nan_callbacks.h
+199 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 420 ]
+200 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+201 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 420 ]
+202 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+203 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 420 ]
+204 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+205 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 420 ]
+206 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+207 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 420 ]
+208 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+209 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+210 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+211 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+212 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+213 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 420 ]
+214 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+215 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 420 ]
+216 silly gunzTarPerm extractEntry nan_new.h
+217 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+218 silly gunzTarPerm extractEntry nan_object_wrap.h
+219 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 420 ]
+220 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+221 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 420 ]
+222 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+223 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 420 ]
+224 silly gunzTarPerm extractEntry nan_string_bytes.h
+225 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+226 silly gunzTarPerm extractEntry nan_weak.h
+227 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 420 ]
+228 silly gunzTarPerm extractEntry CHANGELOG.md
+229 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+230 silly gunzTarPerm extractEntry tools/package.json
+231 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 420 ]
+232 silly gunzTarPerm extractEntry tools/README.md
+233 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 420 ]
+234 silly gunzTarPerm extractEntry tools/1to2.js
+235 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 493 ]
+236 info preinstall nan@2.0.5
+237 silly install resolved []
+238 verbose about to build /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/nan
+239 info build /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/nan
+240 verbose linkStuff [ false,
+240 verbose linkStuff   false,
+240 verbose linkStuff   false,
+240 verbose linkStuff   '/Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules' ]
+241 info linkStuff nan@2.0.5
+242 verbose linkBins nan@2.0.5
+243 verbose linkMans nan@2.0.5
+244 verbose rebuildBundles nan@2.0.5
+245 info install nan@2.0.5
+246 info postinstall nan@2.0.5
+247 verbose unlock done using /Users/DMNDPL1/.npm/_locks/nan-b37cf18d4a725bf8.lock for /Users/DMNDPL1/Projects/store/node_modules/bcrypt/node_modules/nan
+248 verbose about to build /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+249 info build /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+250 verbose linkStuff [ false,
+250 verbose linkStuff   false,
+250 verbose linkStuff   false,
+250 verbose linkStuff   '/Users/DMNDPL1/Projects/store/node_modules' ]
+251 info linkStuff bcrypt@0.8.5
+252 verbose linkBins bcrypt@0.8.5
+253 verbose linkMans bcrypt@0.8.5
+254 verbose rebuildBundles bcrypt@0.8.5
+255 verbose rebuildBundles [ 'bindings', 'nan' ]
+256 info install bcrypt@0.8.5
+257 verbose unsafe-perm in lifecycle false
+258 info bcrypt@0.8.5 Failed to exec install script
+259 verbose unlock done using /Users/DMNDPL1/.npm/_locks/bcrypt-37c106b92f59b646.lock for /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+260 verbose stack Error: bcrypt@0.8.5 install: `node-gyp rebuild`
+260 verbose stack Exit status 1
+260 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+260 verbose stack     at EventEmitter.emit (events.js:110:17)
+260 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:14:12)
+260 verbose stack     at ChildProcess.emit (events.js:110:17)
+260 verbose stack     at maybeClose (child_process.js:1008:16)
+260 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1080:5)
+261 verbose pkgid bcrypt@0.8.5
+262 verbose cwd /Users/DMNDPL1/Projects/store
+263 error Darwin 14.4.0
+264 error argv "node" "/usr/local/bin/npm" "install"
+265 error node v0.12.0
+266 error npm  v2.5.1
+267 error code ELIFECYCLE
+268 error bcrypt@0.8.5 install: `node-gyp rebuild`
+268 error Exit status 1
+269 error Failed at the bcrypt@0.8.5 install script 'node-gyp rebuild'.
+269 error This is most likely a problem with the bcrypt package,
+269 error not with npm itself.
+269 error Tell the author that this fails on your system:
+269 error     node-gyp rebuild
+269 error You can get their info via:
+269 error     npm owner ls bcrypt
+269 error There is likely additional logging output above.
+270 verbose exit [ 1, true ]
+271 verbose unbuild node_modules/bcrypt
+272 info preuninstall bcrypt@0.8.5
+273 info uninstall bcrypt@0.8.5
+274 verbose unbuild rmStuff bcrypt@0.8.5 from /Users/DMNDPL1/Projects/store/node_modules
+275 info postuninstall bcrypt@0.8.5
+276 verbose gentlyRm vacuuming /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+277 silly gentlyRm purging /Users/DMNDPL1/Projects/store/node_modules/bcrypt
+278 silly gentlyRm quitting because other entries in /Users/DMNDPL1/Projects/store/node_modules

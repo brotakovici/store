@@ -8,6 +8,7 @@ profile = (req, res) ->
   res.render('profile', {user: req.user})
 
 edit = (req, res) ->
+  console.log(req.user)
   res.render('edit', {user: req.user})
 
 logout = (req, res) ->

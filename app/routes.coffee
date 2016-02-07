@@ -39,3 +39,4 @@ module.exports = (app, passport) ->
 
   #API
   app.put('/edit', isLoggedIn, api.user.edit)
+  app.get('/user/self/', isLoggedIn, api.user.self)

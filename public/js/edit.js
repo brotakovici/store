@@ -1,14 +1,22 @@
 (function(){
 
- // Inputs!
- var elemId = document.getElementById('id');
- var elemName = document.getElementById('name');  
- var elemEmail = document.getElementById('email');  
- var elemPhone = document.getElementById('phone');  
- var elemAddress = document.getElementById('address');  
- var elemCity = document.getElementById('city');  
- var elemCounty = document.getElementById('county');  
- var elemPostcode = document.getElementById('postcode');  
+var getCurrentUserDetails = function() {
+  HTTPRequest.get('/user/self', function(status, header, content){
+    console.log(content);
+  });
+};
+
+getCurrentUserDetails();
+  
+// Inputs!
+var elemId = document.getElementById('id');
+var elemName = document.getElementById('name');  
+var elemEmail = document.getElementById('email');  
+var elemPhone = document.getElementById('phone');  
+var elemAddress = document.getElementById('address');  
+var elemCity = document.getElementById('city');  
+var elemCounty = document.getElementById('county');  
+var elemPostcode = document.getElementById('postcode');  
 
 // Buttons!
 var elemSaveBtn = document.getElementById('save-button');
@@ -26,6 +34,8 @@ attachEventListener(elemSaveBtn, 'click', function() {
     'county': elemCounty.value,
     'postcode': elemPostcode.value
   };
+  
+  console.log(data);
 
   HTTPRequest.put('/edit', data, function(status, header, content){
     // Error management goes here!!

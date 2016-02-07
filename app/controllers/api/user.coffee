@@ -12,6 +12,19 @@ edit = (req, res) ->
       console.log 'Nu e bine'
   )
 
+one = (req, res) ->
+  console.log req.body
+
+self = (req, res) ->
+  user.one(req.user._id, (err, doc) ->
+    if err?
+      console.log err
+    else
+      res.send(doc)
+  )
+
 module.exports = {
   edit: edit
+  one: one
+  self: self
 }

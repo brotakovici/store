@@ -155,7 +155,29 @@ edit = (values, user, done) ->
     return done(err, nrAffected)
   ))
   ###
-  console.log user
+  existingUser = null
+  User.findById(user._id, (err, doc) ->
+    if err?
+      console.log err
+    else
+      existingUser = doc
+  
+    editableFields = ['firstName', 'middleName', 'lastName', 'email', 'phone', 'city', 'county', 'address', 'postcode']
+    for field in editableFields
+      console.log values[field]
+      if values[field]?
+        existingUser[field] = values[field]
+    
+    existingUser.save((err, doc) ->
+      if err?
+        console.log err
+      else
+        console.log "Success!"
+    )
+  )
+  
+
+#Exporting the public methods
 module.exports = {
   add: add
   edit: edit

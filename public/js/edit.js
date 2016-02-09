@@ -21,6 +21,7 @@ var emptyIfNull = function (string) {
 var getCurrentUserDetails = function() {
   HTTPRequest.get('/user/self', function(status, header, content){
     content = JSON.parse(content);
+    console.log(content);
     elemFirstName.value = emptyIfNull(content.firstName);
     elemMiddleName.value = emptyIfNull(content.middleName);
     elemLastName.value = emptyIfNull(content.lastName);

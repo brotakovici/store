@@ -20,6 +20,6 @@ userSchema.methods.generateHash = (password) ->
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
 
 userSchema.methods.isValidPassword = (password) ->
-  return bcrypt.compareSync(password, this.local.password)
+  return bcrypt.compareSync(password, this.password)
 
 module.exports = mongoose.model('User', userSchema, 'user')

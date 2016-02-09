@@ -52,8 +52,7 @@ attachEventListener(elemSaveBtn, 'click', function() {
   
   console.log(data);
 
-  HTTPRequest.put('/edit', data, function(status, header, content){
-    // Error management goes here!!
+  userService.editUser(data, function (status, header, content){
     document.location = '/profile';
   });
 });

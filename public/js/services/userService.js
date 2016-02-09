@@ -7,8 +7,13 @@ var getCurrentUserDetails = function() {
   });
 };
 
+var editUser = function(data, callback){
+  HTTPRequest.put('/edit', data, callback);
+};
+
 var userService = {
-  getCurrentUserDetails: getCurrentUserDetails
+  getCurrentUserDetails: getCurrentUserDetails,
+  editUser: editUser
 };
 /*
 if(typeof userService === 'object' && userService)

@@ -3,8 +3,8 @@ async = require('async')
 errors  = require('../../lib/errors')
 
 validateUserValuePresence = (values, done) ->
-  ###areAllFieldsCompleted = values.local? && values.local.email? &&
-    values.local.password? && values.firstName? &&
+  ###areAllFieldsCompleted = values.email? &&
+    values.password? && values.firstName? &&
     values.lastName? && values.phone?
 
   if !areAllFieldsCompleted
@@ -37,7 +37,7 @@ validateUserValues = (values, done) ->
     return done(err)
 
 checkIfUserEmailTaken = (values, done) ->
-  User.find({'local.email': values.local.email}, (err, docs) =>
+  User.find({'email': values.email}, (err, docs) =>
     if docs.length == 0
       return done(null)
     else
@@ -50,9 +50,7 @@ add = (values, done) ->
 
   addUser = (values, done) ->
     newUser = new User({
-      local: {
-        email: values.local.email
-      }
+      mail: values.email
       firstName: values.firstName
       lastName: values.lastName
       phone: values.phone
@@ -61,7 +59,7 @@ add = (values, done) ->
       address: values.address
       postcode: values.postcode
     })
-    newUser.local.password = newUser.generateHash(values.local.password)
+    newUser.password = newUser.generateHash(values.password)
     newUser.save((err, doc) =>
       if err
         console.log err
@@ -94,14 +92,14 @@ one = (id, done) ->
   )
 
 login =  (values, done) ->
-  User.findOne({'local.email': values.local.email}, (err, user) =>
+  User.findOne({'email': values.email}, (err, user) =>
     if err
       return done(err)
 
     if !user
       return done(errors.no_user_found, false)
     
-    if !user.validPassword(values.local.password)
+    if !user.validPassword(values.password)
       return done(errors.wrong_password, false)
 
     return done(null, user)
@@ -128,7 +126,7 @@ validatePermissions = (values, user, done) ->
   )
     
 editUser = (user, values, done) ->
-  editableFields = ['firstName', 'middleName', 'lastName', 'local.email', 'phone', 'city', 'county', 'address', 'postcode']
+  editableFields = ['firstName', 'middleName', 'lastName', 'email', 'phone', 'city', 'county', 'address', 'postcode']
   for field in editableFields
     if values[field]?
       user[field] = values[field]
@@ -143,7 +141,7 @@ editUser = (user, values, done) ->
 
 edit = (values, user, done) ->
   err = null
-
+  ###
   async.waterfall([
     (done) =>
       validatePermissions(values, user, done) 
@@ -156,7 +154,8 @@ edit = (values, user, done) ->
   ], ((err, nrAffected) =>
     return done(err, nrAffected)
   ))
-
+  ###
+  console.log user
 module.exports = {
   add: add
   edit: edit

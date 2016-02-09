@@ -24,7 +24,7 @@ var getCurrentUserDetails = function() {
     elemFirstName.value = emptyIfNull(content.firstName);
     elemMiddleName.value = emptyIfNull(content.middleName);
     elemLastName.value = emptyIfNull(content.lastName);
-    elemEmail.value = emptyIfNull(content.local.email);
+    elemEmail.value = emptyIfNull(content.email);
     elemPhone.value = emptyIfNull(content.phone);
     elemAddress.value = emptyIfNull(content.address);
     elemCity.value = emptyIfNull(content.city);
@@ -49,7 +49,7 @@ attachEventListener(elemSaveBtn, 'click', function() {
     'firstName': elemFirstName.value,
     'lastName': elemLastName.value,
     'middleName': elemMiddleName.value,
-    'local.email': elemEmail.value,
+    'email': elemEmail.value,
     'phone': elemPhone.value,
     'address': elemAddress.value,
     'city': elemCity.value,

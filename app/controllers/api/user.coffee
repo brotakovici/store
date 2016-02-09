@@ -2,7 +2,6 @@ user = require('./user_core')
 
 #Edits a user.
 edit = (req, res) ->
-  console.log req.body
   user._id = req.body._id
   user.isAuthenticated = req.isAuthenticated()
   data = req.body

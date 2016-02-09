@@ -19,7 +19,7 @@ module.exports = (app, passport) ->
       passReqToCallback: true
     }, (req, email, password, done) ->
       process.nextTick( ->  
-        User.findOne({'local.email': email}, (err, user) =>
+        User.findOne({'email': email}, (err, user) =>
           if err
             return done(err)
 
@@ -27,8 +27,8 @@ module.exports = (app, passport) ->
             return done(null, false, req.flash('signupMessage', 'Email is already taken'))
           else
             newUser = new User
-            newUser.local.email = email
-            newUser.local.password = newUser.generateHash(password)
+            newUser.email = email
+            newUser.password = newUser.generateHash(password)
 
             newUser.save((err, doc) ->
               if(err)
@@ -46,7 +46,7 @@ module.exports = (app, passport) ->
       passwordField: 'password'
       passReqToCallback: true
     }, (req, email, password, done) ->
-      User.findOne({'local.email': email}, (err, user) ->
+      User.findOne({'email': email}, (err, user) ->
         if err
           return done(err)
         if not user

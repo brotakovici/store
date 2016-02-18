@@ -5,6 +5,7 @@ productSchema = mongoose.Schema({
     name: String
     quantity: Number
     price: Number
+    description: String
   }
 })
 

@@ -13,6 +13,7 @@ module.exports = (app, passport) ->
   pages = {
     user: require('./controllers/user')
     home: require('./controllers/home')
+    product: require('./controllers/product')
   }
   
   api = {
@@ -36,6 +37,10 @@ module.exports = (app, passport) ->
   app.get('/profile', isLoggedIn, pages.user.profile)
   app.get('/logout', pages.user.logout)
   app.get('/edit', isLoggedIn, pages.user.edit)
+
+  #Products
+  app.get('/product/view/:id', pages.product.view)
+  app.get('/product/edit/:id', isLoggedIn, pages.product.edit)
 
   #API
   app.put('/edit', isLoggedIn, api.user.edit)

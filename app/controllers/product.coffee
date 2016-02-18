@@ -28,5 +28,5 @@ edit = (req, res) ->
 module.exports = {
     view: view
     add: add
-    edid: edit
+    edit: edit
 }

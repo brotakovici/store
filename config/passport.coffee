@@ -1,5 +1,6 @@
 LocalStrategy = require('passport-local').Strategy
 User = require('../app/models/user')
+roles = require('../app/lib/roles')
 
 module.exports = (app, passport) -> 
   
@@ -29,6 +30,7 @@ module.exports = (app, passport) ->
             newUser = new User
             newUser.email = email
             newUser.password = newUser.generateHash(password)
+            newUser.role = roles.user
 
             newUser.save((err, doc) ->
               if(err)

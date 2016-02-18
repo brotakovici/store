@@ -17,16 +17,8 @@ userSchema = mongoose.Schema({
   address: String
   postcode: String
   
-  cart: [{
-    productId: ObjectId 
-    quantity: Number
-  }]
-  
-  wishlist: [{
-    productId: ObjectId 
-    quantity: Number
-  }]
-  
+  cart: ObjectId
+  wishlist: ObjectId
 })
 
 userSchema.methods.generateHash = (password) ->

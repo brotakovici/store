@@ -173,9 +173,9 @@ edit = (values, user, done) ->
         console.log err
       else
         console.log "Success!"
+        return done()
     )
   )
-  
 
 #Exporting the public methods
 module.exports = {

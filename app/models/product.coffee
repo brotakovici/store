@@ -1,12 +1,11 @@
 mongoose = require('mongoose')
 
 productSchema = mongoose.Schema({
-  product: {
     name: String
     quantity: Number
     price: Number
     description: String
-  }
+    options: [String]
 })
 
-module.exprorts = mongoose.model('Product', productSchema, 'product')
+module.exports = mongoose.model('Product', productSchema, 'product')

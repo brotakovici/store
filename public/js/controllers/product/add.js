@@ -10,7 +10,7 @@
 
   attachEventListener(elemAddButton, 'click', function(){
     var data = {
-      'createdById': elemId.value,
+      //'createdById': elemId.value,
       'name': elemName.value,
       'description': elemDescription.value,
       'quantity': elemQuantity.value,

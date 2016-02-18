@@ -49,12 +49,12 @@
       'postcode': elemPostcode.value
     };
     
-    userService.editUser(data, function (status, header, content){
+    userService.editUser(data, function(status, header, content){
       document.location = '/profile';
     });
   });
 
-  attachEventListener(elemCancelBtn, 'click', function (){
+  attachEventListener(elemCancelBtn, 'click', function(){
     document.location = "/profile"; 
   });
 

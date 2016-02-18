@@ -43,7 +43,7 @@ module.exports = (app, passport) ->
   app.get('/products', pages.product.all)
   app.get('/product/view/:id', pages.product.view)
   app.get('/product/edit/:id', isLoggedIn, pages.product.edit)
-  app.get('/product/add/:id', isLoggedIn, pages.product.add)
+  app.get('/product/add/', isLoggedIn, pages.product.add)
 
   #API
   app.put('/edit', isLoggedIn, api.user.edit)

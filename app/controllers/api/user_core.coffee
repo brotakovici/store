@@ -175,7 +175,7 @@ edit = (values, user, done) ->
         console.log err
       else
         console.log "Success!"
-        return done()
+        return done(null, doc)
     )
   )
 

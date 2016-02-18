@@ -20,7 +20,6 @@ var emptyIfNull = function (string) {
 
 
 userService.getCurrentUserDetails(function (content) {
-  console.log(content);  
   elemFirstName.value = emptyIfNull(content.firstName);
   elemMiddleName.value = emptyIfNull(content.middleName);
   elemLastName.value = emptyIfNull(content.lastName);
@@ -51,8 +50,6 @@ attachEventListener(elemSaveBtn, 'click', function() {
     'postcode': elemPostcode.value
   };
   
-  console.log(data);
-
   userService.editUser(data, function (status, header, content){
     document.location = '/profile';
   });

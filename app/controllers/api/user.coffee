@@ -8,9 +8,10 @@ edit = (req, res) ->
   user.edit(data, user, (err, doc) ->
     if err?
       console.log err
+      return res.send(err)
     if !doc
       console.log 'Nu e bine'
-    console.log doc
+    return res.sendStatus(200)
   )
 
 one = (req, res) ->
@@ -21,6 +22,7 @@ self = (req, res) ->
   user.one(req.user._id, (err, doc) ->
     if err?
       console.log err
+      res.sendStatus(500)
     else
       res.send(doc)
   )

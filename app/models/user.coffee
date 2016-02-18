@@ -1,5 +1,7 @@
 mongoose = require('mongoose')
 bcrypt = require('bcrypt-nodejs')
+ObjectId = mongoose.Schema.ObjectId;
+
 
 userSchema = mongoose.Schema({
   
@@ -16,13 +18,13 @@ userSchema = mongoose.Schema({
   postcode: String
   
   cart: [{
-    productId: ObjectId, 
-    quantity: Int
+    productId: ObjectId 
+    quantity: Number
   }]
   
   wishlist: [{
-    productId: ObjectId, 
-    quantity: Int
+    productId: ObjectId 
+    quantity: Number
   }]
   
 })

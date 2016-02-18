@@ -33,7 +33,8 @@ module.exports = (app, passport) ->
     failureRedirect: '/login'
     failueFlash: true
   }))
-
+  
+  # User stuff
   app.get('/profile', isLoggedIn, pages.user.profile)
   app.get('/logout', pages.user.logout)
   app.get('/edit', isLoggedIn, pages.user.edit)

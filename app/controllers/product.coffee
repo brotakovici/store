@@ -21,7 +21,7 @@ view = (req, res) ->
   )
   
 # TODO Need do add admin permission for this
-#This just returns the add product view
+# This just returns the add product view
 add = (req, res) ->
   res.render('product/add', {user: req.user})
 

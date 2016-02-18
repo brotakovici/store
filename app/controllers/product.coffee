@@ -1,10 +1,21 @@
 Product = require('./api/product_core')
 
+# TODO test, add view
+all = (req, res) ->
+  Product.getAll((err, doc) ->
+    if err?
+      console.log err
+      res.send(500)
+    else
+      res.render('product/all', {user: req.user, products: doc})
+  )
+
+# TODO test, add view etc
 view = (req, res) ->
     productId = req.params.id
     Product.getProduct(productId, (err, doc) ->
         if err?
-            res.send(err);
+            res.send(err)
         else
             res.render('product/product', {user: req.user, product: doc})
     )

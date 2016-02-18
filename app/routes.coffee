@@ -40,6 +40,7 @@ module.exports = (app, passport) ->
   app.get('/edit', isLoggedIn, pages.user.edit)
 
   #Products
+  app.get('/products', pages.product.all)
   app.get('/product/view/:id', pages.product.view)
   app.get('/product/edit/:id', isLoggedIn, pages.product.edit)
   app.get('/product/add/:id', isLoggedIn, pages.product.add)

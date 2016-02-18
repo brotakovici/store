@@ -35,6 +35,7 @@ module.exports = (app, passport) ->
             newUser.save((err, doc) ->
               if(err)
                 cosole.error(err, doc)
+              delete newUser.password
               return done(null, newUser)
             )
         )
@@ -55,6 +56,7 @@ module.exports = (app, passport) ->
           return done(null, false, req.flash('loginMessage', 'Invalid user or password'))
         if not user.isValidPassword(password)
           return done(null, false, req.flash('loginMessage', 'Invalid user or password'))
+        delete user.password
         return done(null, user)
       )
     )

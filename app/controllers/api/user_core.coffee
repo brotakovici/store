@@ -80,6 +80,8 @@ add = (values, done) ->
     return done(err, doc)
   ))
 
+#TODO stop roundtripping the password hash
+
 one = (id, done) ->
   User.findOne({'_id': id}, (err, user) =>
     if err

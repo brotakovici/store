@@ -19,18 +19,19 @@ var emptyIfNull = function (string) {
 };
 
 
-var content = userService.getCurrentUserDetails();
-elemFirstName.value = emptyIfNull(content.firstName);
-elemMiddleName.value = emptyIfNull(content.middleName);
-elemLastName.value = emptyIfNull(content.lastName);
-elemEmail.value = emptyIfNull(content.email);
-elemPhone.value = emptyIfNull(content.phone);
-elemAddress.value = emptyIfNull(content.address);
-elemCity.value = emptyIfNull(content.city);
-elemCounty.value = emptyIfNull(content.county);
-elemPostcode.value = emptyIfNull(content.postcode);
+userService.getCurrentUserDetails(function (content) {
+  console.log(content);  
+  elemFirstName.value = emptyIfNull(content.firstName);
+  elemMiddleName.value = emptyIfNull(content.middleName);
+  elemLastName.value = emptyIfNull(content.lastName);
+  elemEmail.value = emptyIfNull(content.email);
+  elemPhone.value = emptyIfNull(content.phone);
+  elemAddress.value = emptyIfNull(content.address);
+  elemCity.value = emptyIfNull(content.city);
+  elemCounty.value = emptyIfNull(content.county);
+  elemPostcode.value = emptyIfNull(content.postcode);
+});
   
-
 // Buttons!
 var elemSaveBtn = document.getElementById('save-button');
 var elemCancelBtn = document.getElementById('cancel-button');

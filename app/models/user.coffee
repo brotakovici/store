@@ -14,6 +14,7 @@ userSchema = mongoose.Schema({
   phone: String
   city: String
   county: String
+  country: String
   address: String
   postcode: String
   

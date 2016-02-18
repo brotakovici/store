@@ -1,9 +1,8 @@
-var getCurrentUserDetails = function() {
+var getCurrentUserDetails = function(callback) {
   HTTPRequest.get('/user/self', function(status, header, content){
     content = JSON.parse(content);
     console.log(content);
-    return content;
-    
+    return callback(content);
   });
 };
 

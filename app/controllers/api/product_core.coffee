@@ -17,6 +17,21 @@ getProduct = (id, done) ->
       
       return done(null, doc)
   )
+  
+add = (data, done) ->
+  product = new Product({
+    name: data.name
+    quantity: data.quantity
+    price: data.price
+    description: data.description
+  })
+  product.save((err, doc) ->
+    if err?
+      console.log err
+      return done(err, null)
+    else
+      return done(null, doc)
+  )
 
 module.exports = {
   getAll: getAll

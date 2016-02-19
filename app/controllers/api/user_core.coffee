@@ -1,6 +1,7 @@
 User = require('../../models/user')
 async = require('async')
 errors  = require('../../lib/errors')
+validator = require('validator')
 
 validateUserValuePresence = (values, done) ->
   ###areAllFieldsCompleted = values.email? &&

@@ -1,5 +1,6 @@
 # This file here will handle all product related db operations and shit
 Product = require('../../models/product')
+validator = require('validator')
 
 getAll = (done) ->
   Product.find({}, (err, doc) ->

@@ -26,6 +26,7 @@ add = (data, done) ->
     price: data.price
     description: data.description
   })
+  
   product.save((err, doc) ->
     if err?
       console.log err
@@ -35,6 +36,7 @@ add = (data, done) ->
   )
 
 module.exports = {
+  add: add
   getAll: getAll
   getProduct: getProduct
 }

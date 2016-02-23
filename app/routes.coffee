@@ -1,4 +1,9 @@
-module.exports = (app, passport) ->
+module.exports = (app, passport, dependencies) ->
+  
+  factory = {
+    productCore: dependencies.productCore(dependencies.productModel)
+    userCore: dependencies.userCore(dependencies.userModel)
+  }
   
   isLoggedIn = (req, res, next) ->
     if req.isAuthenticated()
@@ -13,12 +18,12 @@ module.exports = (app, passport) ->
   pages = {
     user: require('./controllers/user')
     home: require('./controllers/home')
-    product: require('./controllers/product')
+    product: require('./controllers/product')(factory.productCore)
   }
   
   api = {
-    user: require('./controllers/api/user')
-    product: require('./controllers/api/product')
+    user: require('./controllers/api/user')(factory.userCore)
+    product: require('./controllers/api/product')(factory.productCore)
   }
   app.get('/', alreadyLogged, pages.home)
   app.get('/login', pages.user.login)
@@ -41,12 +46,14 @@ module.exports = (app, passport) ->
   app.get('/edit', isLoggedIn, pages.user.edit)
 
   # Product stuff
-  app.get('/products', pages.product.all)
-  app.get('/product/view/:id', pages.product.view)
-  app.get('/product/edit/:id', isLoggedIn, pages.product.edit)
-  app.get('/product/add', isLoggedIn, pages.product.add)
-  app.put('/product/add', isLoggedIn, api.product.add)
+  # pages.product.all
+  app.get('/products', (req, res) -> 
+    console.log pages.product)
+  #app.get('/product/view/:id', pages.product.view)
+  #app.get('/product/edit/:id', isLoggedIn, pages.product.edit)
+  #app.get('/product/add', isLoggedIn, pages.product.add)
+  #app.put('/product/add', isLoggedIn, api.product.add)
 
   # API
-  app.put('/edit', isLoggedIn, api.user.edit)
-  app.get('/user/self/', isLoggedIn, api.user.self)
+  #app.put('/edit', isLoggedIn, api.user.edit)
+  #app.get('/user/self/', isLoggedIn, api.user.self)

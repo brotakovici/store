@@ -8,6 +8,7 @@ morgan = require('morgan')
 cookieParser = require('cookie-parser')
 bodyParser = require('body-parser')
 session = require('express-session')
+dependencies = require('./app/dependencies')
 
 mongoose.connect('mongodb://localhost/store')
 
@@ -32,8 +33,8 @@ app.use(passport.session())
 
 require('./config/passport')(app, passport)
 
-require('./app/routes.coffee')(app, passport)
+require('./app/routes.coffee')(app, passport, dependencies)
 
 app.listen(port, -> (
   console.log('Copii shukari se aduna pe localhost:' + port)
-  ))
+))

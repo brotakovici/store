@@ -2,7 +2,7 @@
 Product = require('./api/product_core')
 ###
 
-mofule.exports = (product) ->
+module.exports = (product) ->
   # TODO test, add view
   all = (req, res) ->
     product.getAll((err, doc) ->

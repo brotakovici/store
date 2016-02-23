@@ -1,10 +1,5 @@
 module.exports = (app, passport, dependencies) ->
   
-  factory = {
-    productCore: dependencies.productCore(dependencies.productModel)
-    userCore: dependencies.userCore(dependencies.userModel)
-  }
-  
   isLoggedIn = (req, res, next) ->
     if req.isAuthenticated()
       return next()
@@ -18,13 +13,14 @@ module.exports = (app, passport, dependencies) ->
   pages = {
     user: require('./controllers/user')
     home: require('./controllers/home')
-    product: require('./controllers/product')(factory.productCore)
+    product: require('./controllers/product')(dependencies.productCore)
   }
   
   api = {
-    user: require('./controllers/api/user')(factory.userCore)
-    product: require('./controllers/api/product')(factory.productCore)
+    user: require('./controllers/api/user')(dependencies.userCore)
+    product: require('./controllers/api/product')(dependencies.productCore)
   }
+  
   app.get('/', alreadyLogged, pages.home)
   app.get('/login', pages.user.login)
   app.post('/login', passport.authenticate('local-login', {

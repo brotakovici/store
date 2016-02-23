@@ -34,8 +34,6 @@ app.use(passport.session())
 		
 require('./config/passport')(app, passport)		
 
-console.log factory(dependencies)
-
 require('./app/routes.coffee')(app, passport, factory(dependencies))		
 		
 app.listen(port, -> (		

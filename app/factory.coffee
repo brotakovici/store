@@ -10,6 +10,8 @@ module.exports = (dependencies) ->
   
     view_controllers = {
       product: dependencies.view_controllers.product(productCore)
+      user: dependencies.view_controllers.user
+      home: dependencies.view_controllers.home
     }
     
     return {

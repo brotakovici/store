@@ -19,7 +19,8 @@ module.exports = {
   # VIEW CONTROLLERS
   view_controllers: {
     product: require('./controllers/product')
-    #user: require('./controllers/user')
+    user: require('./controllers/user')
+    home: require('./controllers/home')
   }
   
   # MISC

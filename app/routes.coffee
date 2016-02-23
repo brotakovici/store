@@ -11,8 +11,8 @@ module.exports = (app, passport, dependencies) ->
     return next()
 
   pages = {
-    user: require('./controllers/user')
-    home: require('./controllers/home')
+    user: dependencies.view_controllers.user
+    home: dependencies.view_controllers.home
     product: dependencies.view_controllers.product
   }
   

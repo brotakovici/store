@@ -1,7 +1,3 @@
-###
-Product = require('./api/product_core')
-###
-
 module.exports = (product) ->
   # TODO test, add view
   all = (req, res) ->

@@ -6,5 +6,5 @@ module.exports = {
   productCore: require('./controllers/api/product_core')
   validator: require('validator')
   async: require('async')
-  errors: require('/lib/errors')
+  errors: require('./lib/errors')
 }

@@ -13,12 +13,12 @@ module.exports = (app, passport, dependencies) ->
   pages = {
     user: require('./controllers/user')
     home: require('./controllers/home')
-    product: require('./controllers/product')(dependencies.productCore)
+    product: dependencies.view_controllers.product
   }
   
   api = {
-    user: require('./controllers/api/user')(dependencies.userCore)
-    product: require('./controllers/api/product')(dependencies.productCore)
+    user: dependencies.api_controllers.user
+    product: dependencies.api_controllers.product
   }
   
   app.get('/', alreadyLogged, pages.home)

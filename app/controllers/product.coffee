@@ -39,9 +39,9 @@ module.exports = (product) ->
         res.render('product/edit', {user: req.user, product: doc})
     )
     
-    return {
-      all: all
-      add: add
-      view: view
-      edit: edit
-    }
+  return {
+    all: all
+    add: add
+    view: view
+    edit: edit
+  }

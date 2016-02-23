@@ -31,3 +31,9 @@ module.exports = (Product, validator) ->
       else
         return done(null, doc)
     )
+  
+  return {
+    add: add
+    getAll: getAll
+    getProduct: getProduct
+  }

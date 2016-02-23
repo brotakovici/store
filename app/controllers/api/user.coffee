@@ -29,3 +29,9 @@ module.exports = (user) ->
       else
         res.send(doc)
     )
+  
+  return {
+    edit: edit
+    one: one
+    self: self
+  }

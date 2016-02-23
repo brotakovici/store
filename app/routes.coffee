@@ -46,14 +46,12 @@ module.exports = (app, passport, dependencies) ->
   app.get('/edit', isLoggedIn, pages.user.edit)
 
   # Product stuff
-  # pages.product.all
-  app.get('/products', (req, res) -> 
-    console.log pages.product)
-  #app.get('/product/view/:id', pages.product.view)
-  #app.get('/product/edit/:id', isLoggedIn, pages.product.edit)
-  #app.get('/product/add', isLoggedIn, pages.product.add)
-  #app.put('/product/add', isLoggedIn, api.product.add)
+  app.get('/products', pages.product.all)
+  app.get('/product/view/:id', pages.product.view)
+  app.get('/product/edit/:id', isLoggedIn, pages.product.edit)
+  app.get('/product/add', isLoggedIn, pages.product.add)
+  app.put('/product/add', isLoggedIn, api.product.add)
 
   # API
-  #app.put('/edit', isLoggedIn, api.user.edit)
-  #app.get('/user/self/', isLoggedIn, api.user.self)
+  app.put('/edit', isLoggedIn, api.user.edit)
+  app.get('/user/self/', isLoggedIn, api.user.self)

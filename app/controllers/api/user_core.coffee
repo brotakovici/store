@@ -182,3 +182,10 @@ module.exports = (User, async, errors, validator) ->
           return done(null, doc)
       )
     )
+    
+  return {
+    add: add
+    edit: edit
+    login: login
+    one: one
+  }

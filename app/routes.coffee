@@ -1,5 +1,5 @@
 module.exports = (app, passport, dependencies) ->
-  
+
   isLoggedIn = (req, res, next) ->
     if req.isAuthenticated()
       return next()
@@ -15,12 +15,12 @@ module.exports = (app, passport, dependencies) ->
     home: dependencies.view_controllers.home
     product: dependencies.view_controllers.product
   }
-  
+
   api = {
     user: dependencies.api_controllers.user
     product: dependencies.api_controllers.product
   }
-  
+
   app.get('/', alreadyLogged, pages.home)
   app.get('/login', pages.user.login)
   app.post('/login', passport.authenticate('local-login', {
@@ -35,7 +35,7 @@ module.exports = (app, passport, dependencies) ->
     failureRedirect: '/login'
     failueFlash: true
   }))
-  
+
   # User stuff
   app.get('/profile', isLoggedIn, pages.user.profile)
   app.get('/logout', pages.user.logout)

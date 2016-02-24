@@ -1,4 +1,4 @@
-#Dependencies go here   
+#Dependencies go here
 module.exports = {
   # MODELS
   models: {
@@ -15,14 +15,14 @@ module.exports = {
     product: require('./controllers/api/product')
     user: require('./controllers/api/user')
   }
-  
+
   # VIEW CONTROLLERS
   view_controllers: {
     product: require('./controllers/product')
     user: require('./controllers/user')
     home: require('./controllers/home')
   }
-  
+
   # MISC
   misc: {
     errors: require('./lib/errors')

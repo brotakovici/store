@@ -2,8 +2,8 @@ LocalStrategy = require('passport-local').Strategy
 User = require('../app/models/user')
 roles = require('../app/lib/roles')
 
-module.exports = (app, passport) -> 
-  
+module.exports = (app, passport) ->
+
   passport.serializeUser((user, done) ->
     done(null, user.id)
   )
@@ -19,8 +19,8 @@ module.exports = (app, passport) ->
       passwordField: 'password'
       passReqToCallback: true
     }, (req, email, password, done) ->
-      process.nextTick( ->  
-        User.findOne({'email': email}, (err, user) =>
+      process.nextTick( ->
+        User.findOne({'email': email}, (err, user) ->
           if err
             return done(err)
 
@@ -39,26 +39,23 @@ module.exports = (app, passport) ->
               return done(null, newUser)
             )
         )
-       
     )
   ))
 
-
   passport.use('local-login', new LocalStrategy({
-      usernameField: 'email'
-      passwordField: 'password'
-      passReqToCallback: true
-    }, (req, email, password, done) ->
-      User.findOne({'email': email}, (err, user) ->
-        if err
-          return done(err)
-        if not user
-          return done(null, false, req.flash('loginMessage', 'Invalid user or password'))
-        if not user.isValidPassword(password)
-          return done(null, false, req.flash('loginMessage', 'Invalid user or password'))
-        delete user.password
-        return done(null, user)
+    usernameField: 'email'
+    passwordField: 'password'
+    passReqToCallback: true
+  }, (req, email, password, done) ->
+    User.findOne({'email': email}, (err, user) ->
+      if err
+        return done(err)
+      if not user
+        return done(null, false, req.flash('loginMessage', 'Invalid user or password'))
+      if not user.isValidPassword(password)
+        return done(null, false, req.flash('loginMessage', 'Invalid user or password'))
+      delete user.password
+      return done(null, user)
       )
     )
   )
-

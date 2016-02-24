@@ -1,5 +1,5 @@
 mongoose = require('mongoose')
-ObjectId = mongoose.Schema.ObjectId;
+ObjectId = mongoose.Schema.ObjectId
 
 cartSchema = mongoose.Schema({
   products: [{

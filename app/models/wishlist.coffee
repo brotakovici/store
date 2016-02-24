@@ -1,5 +1,5 @@
 mongoose = require('mongoose')
-ObjectId = mongoose.Schema.ObjectId;
+ObjectId = mongoose.Schema.ObjectId
 
 wishlistSchema = mongoose.Schema({
   products: [{

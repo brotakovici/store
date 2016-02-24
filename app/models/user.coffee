@@ -1,10 +1,10 @@
 mongoose = require('mongoose')
 bcrypt = require('bcrypt-nodejs')
-ObjectId = mongoose.Schema.ObjectId;
+ObjectId = mongoose.Schema.ObjectId
 
 
 userSchema = mongoose.Schema({
-  
+
   email: String
   password: String
   firstName: String
@@ -17,7 +17,7 @@ userSchema = mongoose.Schema({
   country: String
   address: String
   postcode: String
-  
+
   cart: ObjectId
   wishlist: ObjectId
 })

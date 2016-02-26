@@ -11,7 +11,7 @@ module.exports = (product) ->
       else
         res.sendStatus(200)
     )
-  
+
   return {
     add: add
   }

@@ -17,7 +17,7 @@
       'price': elemPrice.value
     };
 
-    productService.add(data, function(status, header, content) {
+    productService.addProduct(data, function(status, header, content) {
       document.location = '/profile';
     });
   });

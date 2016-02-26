@@ -27,6 +27,7 @@ module.exports = {
   misc: {
     errors: require('./lib/errors')
   }
+
   # NPM MODULES
   npm: {
     validator: require('validator')

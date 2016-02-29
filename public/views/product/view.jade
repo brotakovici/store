@@ -12,20 +12,13 @@ html
         h1
           input(type="hidden" value='#{user._id}')
           div Name
-          input(type="text" value='#{product.name}')#name
+          p #{product.name}
           div Description
-          textarea(value='#{product.name}')#description
+          p #{product.name}
           div Quantity
-          input(type="number" value='#{product.name}')#quantity
+          p #{product.name}
           div Price
-          input(type="number" value='#{product.name}')#price
-         .row
-           .col-xs-6
-             .btn.btn-default#add-button Save
-           .col-xs-6
-             .btn.btn-default#cancel-button Cancel
+          p #{product.name}
 
 block scripts
   include ../default-scripts
-  script(src="/js/services/productService.js")
-  script(src="/js/controllers/product/edit.js")

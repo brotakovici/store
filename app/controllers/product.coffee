@@ -26,7 +26,7 @@ module.exports = (product) ->
       if err?
         res.send(err)
       else
-        res.render('product/product', {user: req.user, product: doc})
+        res.render('product/view', {user: req.user, product: doc})
     )
 
   # TODO Need do add admin permission for this

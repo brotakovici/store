@@ -1,1 +1,31 @@
-// TODO add product edit view
+doctype html
+html
+  head
+    title Add
+    link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet' href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+    style body {padding-top:80px; word-wrap:break-word;}
+
+  body
+    .container
+      .jumbotron.text-center
+        h1
+          input(type="hidden" value='#{user._id}')
+          div Name
+          input(type="text" value='#{product.name}')#name
+          div Description
+          textarea(value='#{product.name}')#description
+          div Quantity
+          input(type="number" value='#{product.name}')#quantity
+          div Price
+          input(type="number" value='#{product.name}')#price
+         .row
+           .col-xs-6
+             .btn.btn-default#add-button Save
+           .col-xs-6
+             .btn.btn-default#cancel-button Cancel
+
+block scripts
+  include ../default-scripts
+  script(src="/js/services/productService.js")
+  script(src="/js/controllers/product/edit.js")

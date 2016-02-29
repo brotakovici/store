@@ -12,6 +12,17 @@ module.exports = (product) ->
         res.sendStatus(200)
     )
 
+  edit = (req, res) ->
+    product.edit(req.body, (err, doc) ->
+      if err?
+        console.log err
+        res.send(err)
+      else
+        res.sendStatus(200)
+    )
+
+
   return {
     add: add
+    edit: edit
   }

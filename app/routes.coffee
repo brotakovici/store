@@ -45,6 +45,7 @@ module.exports = (app, passport, dependencies) ->
   app.get('/products', pages.product.all)
   app.get('/product/view/:id', pages.product.view)
   app.get('/product/edit/:id', isLoggedIn, pages.product.edit)
+  app.put('/product/edit/', isLoggedIn, api.product.edit)
   app.get('/product/add', isLoggedIn, pages.product.add)
   app.put('/product/add', isLoggedIn, api.product.add)
 

@@ -13,7 +13,7 @@ module.exports = (user) ->
         console.log err
         return res.send(err)
       if !doc
-        console.log 'Nu e bine'
+        res.sendStatus(500)
       return res.sendStatus(200)
     )
   

@@ -1,19 +1,15 @@
 expect = require('chai').expect
 dependencies = require('../app/dependencies')
-Mongoose = require('mongoose').Mongoose
-mongoose = new Mongoose()
+core_mock = require('./mocks/user_core_mock')
+userController = {}
 
-mockgoose = require('mockgoose')
-mockgoose(mongoose)
 
 before(() ->
-  mongoose.connect('mongodb://localhost/storeTest', (err) ->
-        console.log err
-  )
+  userController = dependencies.api_controllers.user(core_mock)
 )
 
 beforeEach(() ->
-  
+  # dunno whats in here yet
 )
 
 describe('User API Controller', () ->

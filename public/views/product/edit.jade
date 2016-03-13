@@ -10,17 +10,15 @@ html
     .container
       .jumbotron.text-center
         h1
-          p penis
           input(type="hidden" value='#{user._id}')
           div Name
           input(type="text" value='#{product.name}')#name
           div Description
-          textarea(value='#{product.description}')#description
+          textarea#description #{product.description}
           div Quantity
           input(type="number" value='#{product.quantity}')#quantity
           div Price
           input(type="number" value='#{product.price}')#price
-          p #{product}
           .row
             .col-xs-6
               .btn.btn-default#add-button Save

@@ -8,6 +8,10 @@ module.exports = (dependencies) ->
   #User = require('./models/user')
   #console.log User
 
+  core_controllers = {
+    userCore: userCore
+  }
+
   api_controllers = {
     user: dependencies.api_controllers.user(userCore)
     product: dependencies.api_controllers.product(productCore)
@@ -20,6 +24,7 @@ module.exports = (dependencies) ->
   }
 
   return {
+    core_controllers: core_controllers
     api_controllers: api_controllers
     view_controllers: view_controllers
   }

@@ -32,9 +32,11 @@ app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
 
-require('./config/passport')(app, passport)
+dependencies = factory(dependencies)
 
-require('./app/routes.coffee')(app, passport, factory(dependencies))
+require('./config/passport')(app, passport, dependencies.core_controllers.userCore)
+
+require('./app/routes.coffee')(app, passport, dependencies)
 
 app.listen(port, -> (
   console.log('Copii shukari se aduna pe localhost:' + port)

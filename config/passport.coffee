@@ -20,6 +20,7 @@ module.exports = (app, passport, userCore) ->
       passReqToCallback: true
     }, (req, email, password, done) ->
       process.nextTick( ->
+        ###
         values = {
           email: email
           password: password
@@ -49,7 +50,6 @@ module.exports = (app, passport, userCore) ->
               return done(null, newUser)
             )
         )
-        ###
     )
   ))
 

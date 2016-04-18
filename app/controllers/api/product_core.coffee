@@ -1,4 +1,5 @@
-module.exports = (Product, validator) ->
+module.exports = (Product, userCoreValidator) ->
+
   getAll = (done) ->
     Product.find({}, (err, doc) ->
       if err?
@@ -17,6 +18,7 @@ module.exports = (Product, validator) ->
     )
 
   add = (data, done) ->
+
     product = new Product({
       name: data.name
       quantity: data.quantity

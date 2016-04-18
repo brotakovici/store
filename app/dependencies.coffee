@@ -10,6 +10,12 @@ module.exports = {
     userCore: require('./controllers/api/user_core')
     productCore: require('./controllers/api/product_core')
   }
+
+  # CORE VALIDATORS
+  core_validators: {
+    userCoreValidator: require('./controllers/api/validators/userCoreValidator')
+  }
+
   # API CONTROLLERS
   api_controllers:{
     product: require('./controllers/api/product')

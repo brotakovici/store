@@ -2,7 +2,7 @@ LocalStrategy = require('passport-local').Strategy
 User = require('../app/models/user')
 roles = require('../app/lib/roles')
 
-module.exports = (app, passport) ->
+module.exports = (app, passport, userCore) ->
 
   passport.serializeUser((user, done) ->
     done(null, user.id)
@@ -20,6 +20,16 @@ module.exports = (app, passport) ->
       passReqToCallback: true
     }, (req, email, password, done) ->
       process.nextTick( ->
+        values = {
+          email: email
+          password: password
+        }
+        userCore.signup(values, (err, doc) ->
+          if err?
+            console.log "hau hau"
+
+        )
+        ###
         User.findOne({'email': email}, (err, user) ->
           if err
             return done(err)
@@ -39,6 +49,7 @@ module.exports = (app, passport) ->
               return done(null, newUser)
             )
         )
+        ###
     )
   ))
 

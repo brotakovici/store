@@ -1,9 +1,9 @@
 
 
-module.exports = (validator) ->
+module.exports = (validator, errors) ->
 
-  validateEmail = (email) ->
-    
+  validateSignIn = (email) ->
+
 
   return {
 

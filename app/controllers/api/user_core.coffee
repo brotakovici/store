@@ -13,7 +13,7 @@ module.exports = (User, async, errors, validator) ->
     )
 
   signup = (values, done) ->
-    validator.validateSignUp(values, (err, values) ->
+    validator.validateEmail(values, (err, values) ->
     
       if err?
         return done(err)
@@ -38,21 +38,27 @@ module.exports = (User, async, errors, validator) ->
       )
     )
 
-  ###
+  
   login =  (values, done) ->
-    User.findOne({'email': values.email}, (err, user) ->
-      if err
-        return done(err)
-
-      if !user
-        return done(errors.no_user_found, false)
-
-      if !user.validPassword(values.password)
-        return done(errors.wrong_password, false)
-
-      return done(null, user)
+    validator.validateEmail(values, (err, values) ->
+      
+      if err?
+        return done(err, null)
+      
+      User.findOne({'email': values.email}, (err, user) ->
+        if err
+          return done(err)
+  
+        if !user
+          return done(errors.no_user_found, false)
+  
+        if !user.validPassword(values.password)
+          return done(errors.wrong_password, false)
+  
+        return done(null, user)
+      )
     )
-  ###
+  
 
   editUser = (user, values, done) ->
     editableFields = ['firstName', 'middleName', 'lastName', 'email', 'phone', 'city', 'county', 'address', 'postcode']
@@ -96,6 +102,6 @@ module.exports = (User, async, errors, validator) ->
   return {
     signup: signup
     edit: edit
-    #login: login
+    login: login
     one: one
   }

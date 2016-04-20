@@ -39,13 +39,13 @@ module.exports = (User, async, errors, validator) ->
     )
 
   
-  login =  (values, done) ->
-    validator.validateEmail(values, (err, values) ->
+  login =  (email, done) ->
+    validator.validateEmail(email, (err, email) ->
       
       if err?
         return done(err, null)
       
-      User.findOne({'email': values.email}, (err, user) ->
+      User.findOne({'email': email}, (err, user) ->
         if err
           return done(err)
   

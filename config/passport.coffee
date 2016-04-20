@@ -38,15 +38,15 @@ module.exports = (app, passport, userCore) ->
     passwordField: 'password'
     passReqToCallback: true
   }, (req, email, password, done) ->
-    User.findOne({'email': email}, (err, user) ->
-      if err
+    values = {
+      email: email
+      password: password
+    }
+    
+    userCore.login(values, (err, user) ->
+      if err?
         return done(err)
-      if not user
-        return done(null, false, req.flash('loginMessage', 'Invalid user or password'))
-      if not user.isValidPassword(password)
-        return done(null, false, req.flash('loginMessage', 'Invalid user or password'))
-      delete user.password
+        
       return done(null, user)
-      )
     )
   )

@@ -20,35 +20,15 @@ module.exports = (app, passport, userCore) ->
       passReqToCallback: true
     }, (req, email, password, done) ->
       process.nextTick( ->
-        ###
         values = {
           email: email
           password: password
         }
         userCore.signup(values, (err, doc) ->
           if err?
-            console.log "hau hau"
-
-        )
-        ###
-        User.findOne({'email': email}, (err, user) ->
-          if err
-            return done(err)
-
-          if user
-            return done(null, false, req.flash('signupMessage', 'Email is already taken'))
-          else
-            newUser = new User
-            newUser.email = email
-            newUser.password = newUser.generateHash(password)
-            newUser.role = roles.user
-
-            newUser.save((err, doc) ->
-              if(err)
-                cosole.error(err, doc)
-              delete newUser.password
-              return done(null, newUser)
-            )
+            return done(err, null)
+          
+          return done(err, doc)
         )
     )
   ))

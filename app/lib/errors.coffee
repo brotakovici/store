@@ -6,4 +6,5 @@ module.exports = {
   user_invalid_arguments: 'INVALID ARGUMENTS'
   registration_error: 'REGISTRATION ERROR'
   wrong_password: 'INCORRECT PASSWORD'
+  user_exists: 'USER ALREADY EXISTS'
 }

@@ -13,23 +13,29 @@ module.exports = (User, async, errors, validator) ->
     )
 
   signup = (values, done) ->
-    User.findOne({'email': values.email}, (err, user) ->
-      if err
+    validator.validateSignUp(values, (err, values) ->
+    
+      if err?
         return done(err)
-
-      if user
-        return done("USER ALREADY EXISTS")
-      else
-        newUser = new User
-        newUser.email = values.email
-        newUser.password = newUser.generateHash(values.password)
-        newUser.role = roles.user
-
-        newUser.save((err, doc) ->
-          if(err)
-            cosole.error(err, doc)
-          return done(null, newUser)
-        )
+    
+      User.findOne({'email': values.email}, (err, user) ->
+        if err
+          return done(err)
+  
+        if user
+          return done(errors.user_exists)
+        else
+          newUser = new User
+          newUser.email = values.email
+          newUser.password = newUser.generateHash(values.password)
+          newUser.role = roles.user
+  
+          newUser.save((err, doc) ->
+            if(err)
+              cosole.error(err, doc)
+            return done(null, newUser)
+          )
+      )
     )
 
   ###

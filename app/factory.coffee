@@ -1,6 +1,6 @@
 module.exports = (dependencies) ->
 
-  userCoreValidator = dependencies.core_validators.userCoreValidator(dependencies.npm.validator)
+  userCoreValidator = dependencies.core_validators.userCoreValidator(dependencies.npm.validator, dependencies.misc.errors)
 
   productCore = dependencies.core_controllers.productCore(dependencies.models.productModel, dependencies.npm.validator)
   userCore = dependencies.core_controllers.userCore(dependencies.models.userModel, dependencies.npm.async,dependencies.misc.errors, userCoreValidator)

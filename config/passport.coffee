@@ -27,7 +27,7 @@ module.exports = (app, passport, userCore) ->
         userCore.signup(values, (err, doc) ->
           if err?
             return done(err, null)
-          
+
           return done(err, doc)
         )
     )
@@ -37,16 +37,16 @@ module.exports = (app, passport, userCore) ->
     usernameField: 'email'
     passwordField: 'password'
     passReqToCallback: true
-  }, (req, email, password, done) ->
-    values = {
-      email: email
-      password: password
-    }
-    
-    userCore.login(values, (err, user) ->
-      if err?
-        return done(err)
-        
-      return done(null, user)
+    }, (req, email, password, done) ->
+      values = {
+        email: email
+        password: password
+      }
+
+      userCore.login(values, (err, user) ->
+        if err?
+          return done(err)
+
+        return done(null, user)
     )
-  )
+    ))

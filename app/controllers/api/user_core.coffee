@@ -14,14 +14,14 @@ module.exports = (User, async, errors, validator) ->
 
   signup = (values, done) ->
     validator.validateEmail(values, (err, values) ->
-    
+
       if err?
         return done(err)
-    
+
       User.findOne({'email': values.email}, (err, user) ->
         if err
           return done(err)
-  
+
         if user
           return done(errors.user_exists)
         else
@@ -29,7 +29,7 @@ module.exports = (User, async, errors, validator) ->
           newUser.email = values.email
           newUser.password = newUser.generateHash(values.password)
           newUser.role = roles.user
-  
+
           newUser.save((err, doc) ->
             if(err)
               cosole.error(err, doc)
@@ -38,27 +38,28 @@ module.exports = (User, async, errors, validator) ->
       )
     )
 
-  
-  login =  (email, done) ->
-    validator.validateEmail(email, (err, email) ->
-      
+
+  login =  (values, done) ->
+
+    validator.validateEmail(values, (err, values) ->
       if err?
         return done(err, null)
-      
-      User.findOne({'email': email}, (err, user) ->
+
+      User.findOne({'email': values.email}, (err, user) ->
+        console.log user
         if err
           return done(err)
-  
+
         if !user
           return done(errors.no_user_found, false)
-  
-        if !user.validPassword(values.password)
+
+        if !user.isValidPassword(values.password)
           return done(errors.wrong_password, false)
-  
+
         return done(null, user)
       )
     )
-  
+
 
   editUser = (user, values, done) ->
     editableFields = ['firstName', 'middleName', 'lastName', 'email', 'phone', 'city', 'county', 'address', 'postcode']
@@ -66,7 +67,7 @@ module.exports = (User, async, errors, validator) ->
       if values[field]?
         user[field] = values[field]
 
-    user.save((err, doc) =>
+    user.save((err, doc) ->
       if err
         console.log err
         err = errors.database_error

@@ -1,7 +1,3 @@
-###
-product = require('./product_core')
-###
-
 module.exports = (product) ->
   add = (req, res) ->
     product.add(req.body, (err, doc) ->

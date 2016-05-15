@@ -9,6 +9,7 @@ module.exports = (User, async, errors, validator) ->
       if !user
         return done(erros.no_user_found, false)
 
+      user.password = "hue hue gotcha"
       return done(null, user)
     )
 

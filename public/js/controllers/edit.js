@@ -1,20 +1,20 @@
 (function(){
   // Inputs!
   var elemId = document.getElementById('id');
-  var elemFirstName = document.getElementById('firstName');  
-  var elemMiddleName = document.getElementById('middleName');  
-  var elemLastName = document.getElementById('lastName');  
-  var elemEmail = document.getElementById('email');  
-  var elemPhone = document.getElementById('phone');  
-  var elemAddress = document.getElementById('address');  
-  var elemCity = document.getElementById('city');  
-  var elemCounty = document.getElementById('county');  
-  var elemPostcode = document.getElementById('postcode');  
+  var elemFirstName = document.getElementById('firstName');
+  var elemMiddleName = document.getElementById('middleName');
+  var elemLastName = document.getElementById('lastName');
+  var elemEmail = document.getElementById('email');
+  var elemPhone = document.getElementById('phone');
+  var elemAddress = document.getElementById('address');
+  var elemCity = document.getElementById('city');
+  var elemCounty = document.getElementById('county');
+  var elemPostcode = document.getElementById('postcode');
 
   var emptyIfNull = function(string){
     if(string == null || string == 'undefined')
       return '';
-    else 
+    else
       return string;
   };
 
@@ -29,15 +29,16 @@
     elemCity.value = emptyIfNull(content.city);
     elemCounty.value = emptyIfNull(content.county);
     elemPostcode.value = emptyIfNull(content.postcode);
+    console.log(content);
   });
-    
+
   // Buttons!
   var elemSaveBtn = document.getElementById('save-button');
   var elemCancelBtn = document.getElementById('cancel-button');
 
   attachEventListener(elemSaveBtn, 'click', function(){
     var data = {
-      '_id': elemId.value, 
+      '_id': elemId.value,
       'firstName': elemFirstName.value,
       'lastName': elemLastName.value,
       'middleName': elemMiddleName.value,
@@ -48,14 +49,14 @@
       'county': elemCounty.value,
       'postcode': elemPostcode.value
     };
-    
+
     userService.editUser(data, function(status, header, content){
       document.location = '/profile';
     });
   });
 
   attachEventListener(elemCancelBtn, 'click', function(){
-    document.location = "/profile"; 
+    document.location = "/profile";
   });
 
 })();

@@ -48,6 +48,7 @@ module.exports = (app, passport, dependencies) ->
   app.put('/product/edit/', isLoggedIn, api.product.edit)
   app.get('/product/add', isLoggedIn, pages.product.add)
   app.put('/product/add', isLoggedIn, api.product.add)
+  app.post('/product/upload/:id', isLoggedIn, api.product.upload)
 
   # API
   app.put('/edit', isLoggedIn, api.user.edit)

@@ -17,8 +17,11 @@ module.exports = (product) ->
         res.sendStatus(200)
     )
 
+  upload = (req, res) ->
+    return "to be continued"
 
   return {
     add: add
     edit: edit
+    upload: upload
   }

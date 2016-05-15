@@ -1,5 +1,3 @@
-
-
 module.exports = (validator, errors) ->
 
   # Check if its  string outright or object with email property

@@ -20,7 +20,7 @@ module.exports = (Product, validator) ->
   add = (data, done) ->
     console.log data
     console.log validator
-    validator.addProduct(data, (err, product) ->
+    validator.validateProductValues(data, (err, product) ->
 
       if err?
         return done(err, null)
@@ -41,7 +41,7 @@ module.exports = (Product, validator) ->
         )
     )
 
-
+  # Private
   mapProduct = (product, values) ->
     product.name = values.name
     product.quantity = values.quantity
@@ -51,23 +51,26 @@ module.exports = (Product, validator) ->
     return product
 
   edit = (data, done) ->
-    Product.findOne(data.id, (err, doc) ->
-      if err?
-        done(err, null)
-
-      if doc?
-        done(null, null)
-
-      product = mapProduct(doc, data)
-      product.save((err, doc) ->
+    validator.validateProductValues(data, (err, data) ->
+      Product.findOne(data.id, (err, doc) ->
         if err?
-          return done(err, null)
-        if doc?
-          return done(null, null)
+          done(err, null)
 
-        return done(null, doc)
+        if doc?
+          done(null, null)
+
+        product = mapProduct(doc, data)
+        product.save((err, doc) ->
+          if err?
+            return done(err, null)
+          if doc?
+            return done(null, null)
+
+          return done(null, doc)
+        )
       )
     )
+
 
   return {
     add: add

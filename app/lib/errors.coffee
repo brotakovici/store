@@ -10,5 +10,5 @@ module.exports = {
   name_length_error: 'NAME LENGTH IS NOT ACCEPTABLE'
   description_length_error: 'DESCRIPTION LENGTH IS NOT ACCEPTABLE'
   quantity_type_error: 'QUANTITY MUST BE AN INTEGER'
-  price_type_error: 'PUT A PROPER PRICE IN U BELLEND'
+  price_type_error: 'PRICE MUST BE A NUMBER'
 }

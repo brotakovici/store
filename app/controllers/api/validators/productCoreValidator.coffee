@@ -10,7 +10,7 @@ module.exports = (validator, errors) ->
     max: 250
   }
 
-  addProduct = (product, done) ->
+  validateProductValues = (product, done) ->
     if not validator.isLength(product.name, nameLengthOptions)
       return done(errors.name_length_error, null)
 
@@ -25,6 +25,8 @@ module.exports = (validator, errors) ->
 
     return done(null, product)
 
+
+
   return {
-    addProduct: addProduct
+    validateProductValues: validateProductValues
   }

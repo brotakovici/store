@@ -7,4 +7,8 @@ module.exports = {
   registration_error: 'REGISTRATION ERROR'
   wrong_password: 'INCORRECT PASSWORD'
   user_exists: 'USER ALREADY EXISTS'
+  name_length_error: 'NAME LENGTH IS NOT ACCEPTABLE'
+  description_length_error: 'DESCRIPTION LENGTH IS NOT ACCEPTABLE'
+  quantity_type_error: 'QUANTITY MUST BE AN INTEGER'
+  price_type_error: 'PUT A PROPER PRICE IN U BELLEND'
 }

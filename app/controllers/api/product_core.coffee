@@ -1,4 +1,4 @@
-module.exports = (Product, userCoreValidator) ->
+module.exports = (Product, validator) ->
 
   getAll = (done) ->
     Product.find({}, (err, doc) ->
@@ -18,21 +18,29 @@ module.exports = (Product, userCoreValidator) ->
     )
 
   add = (data, done) ->
+    console.log data
+    console.log validator
+    validator.addProduct(data, (err, product) ->
 
-    product = new Product({
-      name: data.name
-      quantity: data.quantity
-      price: data.price
-      description: data.description
-    })
-
-    product.save((err, doc) ->
       if err?
-        console.log err
         return done(err, null)
       else
-        return done(null, doc)
+        product = new Product({
+          name: data.name
+          quantity: data.quantity
+          price: data.price
+          description: data.description
+        })
+
+        product.save((err, doc) ->
+          if err?
+            console.log err
+            return done(err, null)
+          else
+            return done(null, doc)
+        )
     )
+
 
   mapProduct = (product, values) ->
     product.name = values.name

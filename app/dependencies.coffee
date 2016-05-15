@@ -14,6 +14,7 @@ module.exports = {
   # CORE VALIDATORS
   core_validators: {
     userCoreValidator: require('./controllers/api/validators/userCoreValidator')
+    productCoreValidator: require('./controllers/api/validators/productCoreValidator')
   }
 
   # API CONTROLLERS

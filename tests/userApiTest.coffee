@@ -14,16 +14,35 @@ beforeEach(() ->
 
 describe('User API Controller', () ->
   user = dependencies.api_controllers.user
-  
+
   describe('self', () ->
-  
+    it('should return own user', () ->
+
+    )
   )
-  
+
   describe('edit', () ->
-  
+    it('should edit the user', () ->
+
+    )
+
+    it('should throw error on invalid values', () ->
+
+    )
+
+    it('should throw error on no user found', () ->
+
+    )
+
   )
-  
+
   describe('one', () ->
-  
+    it('should return user based on id', () ->
+
+    )
+
+    it('should throw an error on no user', () ->
+
+    )
   )
 )

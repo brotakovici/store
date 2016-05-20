@@ -1,5 +1,9 @@
 #Dependencies go here
 module.exports = {
+  # DATABASE
+
+  database: require('mongoose')
+
   # MODELS
   models: {
     userModel: require('./models/user')

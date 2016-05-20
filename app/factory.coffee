@@ -1,14 +1,12 @@
 module.exports = (dependencies) ->
 
+  dependencies.database.connect('mongodb://localhost/store')
+
   userCoreValidator = dependencies.core_validators.userCoreValidator(dependencies.npm.validator, dependencies.misc.errors)
   productCoreValidator = dependencies.core_validators.productCoreValidator(dependencies.npm.validator, dependencies.misc.errors)
 
-
-  productCore = dependencies.core_controllers.productCore(dependencies.models.productModel, productCoreValidator)
-  userCore = dependencies.core_controllers.userCore(dependencies.models.userModel, dependencies.npm.async,dependencies.misc.errors, userCoreValidator)
-
-  #User = require('./models/user')
-  #console.log User
+  productCore = dependencies.core_controllers.productCore(dependencies.models.productModel(dependencies.database), productCoreValidator)
+  userCore = dependencies.core_controllers.userCore(dependencies.models.userModel(dependencies.database), dependencies.npm.async,dependencies.misc.errors, userCoreValidator)
 
   core_controllers = {
     userCore: userCore

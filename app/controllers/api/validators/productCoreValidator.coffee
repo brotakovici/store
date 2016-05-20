@@ -25,8 +25,6 @@ module.exports = (validator, errors) ->
 
     return done(null, product)
 
-
-
   return {
     validateProductValues: validateProductValues
   }

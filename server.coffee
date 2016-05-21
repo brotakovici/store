@@ -1,7 +1,6 @@
 express = require('express')
 app = express()
 port = process.env.port || 8080
-mongoose = require('mongoose')
 passport = require('passport')
 flash = require('connect-flash')
 morgan = require('morgan')
@@ -10,8 +9,6 @@ bodyParser = require('body-parser')
 session = require('express-session')
 dependencies = require('./app/dependencies')
 factory = require('./app/factory')
-
-mongoose.connect('mongodb://localhost/store')
 
 app.use(morgan('dev'))
 app.use(cookieParser())

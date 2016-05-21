@@ -8,6 +8,11 @@ module.exports = (dependencies) ->
   productCore = dependencies.core_controllers.productCore(dependencies.models.productModel(dependencies.database), productCoreValidator)
   userCore = dependencies.core_controllers.userCore(dependencies.models.userModel(dependencies.database), dependencies.npm.async,dependencies.misc.errors, userCoreValidator)
 
+  models = {
+    userModel: dependencies.models.userModel
+    productModel: dependencies.models.productModel
+  }
+
   core_controllers = {
     userCore: userCore
   }
@@ -24,6 +29,7 @@ module.exports = (dependencies) ->
   }
 
   return {
+    models: models
     core_controllers: core_controllers
     api_controllers: api_controllers
     view_controllers: view_controllers

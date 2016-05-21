@@ -1,5 +1,4 @@
 LocalStrategy = require('passport-local').Strategy
-User = require('../app/models/user')
 roles = require('../app/lib/roles')
 
 module.exports = (app, passport, userCore) ->
@@ -9,15 +8,15 @@ module.exports = (app, passport, userCore) ->
   )
 
   passport.deserializeUser((id, done) ->
-    User.findById(id, (err, user) ->
+    userCore.one(id, (err, user) ->
       done(err, user)
     )
   )
 
   passport.use('local-signup', new LocalStrategy({
-      usernameField: 'email'
-      passwordField: 'password'
-      passReqToCallback: true
+    usernameField: 'email'
+    passwordField: 'password'
+    passReqToCallback: true
     }, (req, email, password, done) ->
       process.nextTick( ->
         values = {
@@ -42,7 +41,6 @@ module.exports = (app, passport, userCore) ->
         email: email
         password: password
       }
-
       userCore.login(values, (err, user) ->
         if err?
           return done(err)

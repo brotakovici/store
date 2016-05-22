@@ -1,10 +1,10 @@
+
 Mongoose = require('mongoose').Mongoose
 mongoose = new Mongoose()
-
 mockgoose = require('mockgoose')
 #mockgoose(mongoose)
 
-dependencies = require('app/dependencies')
+dependencies = require('../app/dependencies')
 Product = {}
 # Damn using mockgoose is hard
 

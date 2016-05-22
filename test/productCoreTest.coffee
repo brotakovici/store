@@ -1,5 +1,3 @@
-require('coffee-script').register()
-
 Mongoose = require('mongoose').Mongoose
 mongoose = new Mongoose()
 
@@ -22,9 +20,14 @@ before(() ->
 )
 
 beforeEach(() ->
-  ###
-  Add test data
-  ###
+  testProduct = new Product({
+
+  })
+
+  testProduct.save((err, doc) ->
+    if err?
+      console.log err
+  )
 )
 
 describe('Product API Core', () ->

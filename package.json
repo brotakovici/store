@@ -5,7 +5,7 @@
   "private": "true",
   "scripts": {
     "start": "nodemon server.coffee",
-    "test": "./node_modules/.bin/mocha --reporter spec --compilers coffee:coffee-script/register"
+    "test": "./node_modules/.bin/mocha -c --reporter spec --compilers coffee:coffee-script/register"
   },
   "dependencies": {
     "HTTPRequest": "~0.1.1",

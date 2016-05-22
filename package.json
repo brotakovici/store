@@ -3,6 +3,10 @@
   "main": "server.coffee",
   "version": "0.1.0",
   "private": "true",
+  "scripts": {
+    "start": "nodemon server.coffee",
+    "test": "./node_modules/.bin/mocha --reporter spec --compilers coffee:coffee-script/register"
+  },
   "dependencies": {
     "HTTPRequest": "~0.1.1",
     "async": "~0.9.0",
@@ -16,7 +20,7 @@
     "express": "~4.12.3",
     "express-session": "~1.10.4",
     "jade": "~1.9.2",
-    "mongoose": "4.0.0",
+    "mongoose": "4.4.19",
     "morgan": "~1.5.2",
     "passport": "~0.2.1",
     "passport-local": "~1.0.0",

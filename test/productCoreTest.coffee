@@ -6,22 +6,17 @@ mongoose = new Mongoose()
 mockgoose = require('mockgoose')
 #mockgoose(mongoose)
 
-chai = require('chai')
-
 dependencies = require('app/dependencies')
 Product = {}
 # Damn using mockgoose is hard
 
-before((done) ->
+before(() ->
   mockgoose(mongoose).then(() ->
     mongoose.connect('mongodb://localhost/storeTest', (err) ->
       if err?
         console.log err
       else
-        console.log "HURR DURR CONECTION WORKS"
         Product = dependencies.productModel(mongoose)
-
-      done()
     )
   )
 )

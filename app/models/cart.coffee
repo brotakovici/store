@@ -1,11 +1,11 @@
-mongoose = require('mongoose')
-ObjectId = mongoose.Schema.ObjectId
+module.exports = (mongoose) ->
+  ObjectId = mongoose.Schema.ObjectId
 
-cartSchema = mongoose.Schema({
-  products: [{
-        productId: ObjectId
-        quantity: Number
-    }]
-})
+  cartSchema = mongoose.Schema({
+    products: [{
+          productId: ObjectId
+          quantity: Number
+      }]
+  })
 
-module.exports = mongoose.model('Cart', cart, 'cart')
+  return mongoose.model('Cart', cart, 'cart')

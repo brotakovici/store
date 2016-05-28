@@ -1,25 +1,26 @@
+before((done) ->
+  console.log '???'
 
-Mongoose = require('mongoose').Mongoose
-mongoose = new Mongoose()
-mockgoose = require('mockgoose')
-#mockgoose(mongoose)
+  Mongoose = require('mongoose').Mongoose
+  mongoose = new Mongoose()
+  mockgoose = require('mockgoose')
 
-dependencies = require('../app/dependencies')
-Product = {}
-# Damn using mockgoose is hard
-
-before(() ->
+  dependencies = require('../app/dependencies')
+  Product = {}
   mockgoose(mongoose).then(() ->
     mongoose.connect('mongodb://localhost/storeTest', (err) ->
       if err?
         console.log err
       else
         Product = dependencies.productModel(mongoose)
+
+      return done()
     )
   )
 )
 
 beforeEach(() ->
+  console.log 'this one den?'
   testProduct = new Product({
 
   })

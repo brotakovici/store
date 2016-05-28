@@ -1,5 +1,24 @@
-module.exports = (User, async, errors, validator) ->
-  #TODO stop roundtripping the password hash
+module.exports = (User, async, errors, validator, Product) ->
+
+  addToWishlist = (id, productId, done) ->
+    User.findOne({'_id': id}, (err, user) ->
+      if err
+        return done(err)
+
+      if !user
+        return done(errors.no_user_found)
+
+      Product.findOne({'_id': productId}, (err, product)->
+        if err
+          return done(err)
+
+        if !product
+          return done(errors.no_product_found)
+
+        user.wishlist.push(productId)
+        return done(null, user)
+      )
+    )
 
   one = (id, done) ->
     User.findOne({'_id': id}, (err, user) ->

@@ -19,7 +19,9 @@ module.exports = (mongoose) ->
     postcode: String
 
     cart: ObjectId
-    wishlist: ObjectId
+    wishlist: [{
+        ProductId: ObjectId
+    }]
   })
 
   userSchema.methods.generateHash = (password) ->

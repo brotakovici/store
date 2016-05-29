@@ -8,4 +8,4 @@ module.exports = (mongoose) ->
       }]
   })
 
-  return mongoose.model('Cart', cart, 'cart')
+  return mongoose.model('Cart', cartSchema, 'cart')

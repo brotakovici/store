@@ -1,4 +1,4 @@
-module.exports = (User, async, errors, validator, Product) ->
+module.exports = (User, async, errors, validator, Product, Cart) ->
 
   addToWishlist = (id, productId, done) ->
     User.findOne({'_id': id}, (err, user) ->
@@ -125,4 +125,5 @@ module.exports = (User, async, errors, validator, Product) ->
     edit: edit
     login: login
     one: one
+    addToWishlist: addToWishlist
   }

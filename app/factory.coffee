@@ -5,8 +5,13 @@ module.exports = (dependencies) ->
   userCoreValidator = dependencies.core_validators.userCoreValidator(dependencies.npm.validator, dependencies.misc.errors)
   productCoreValidator = dependencies.core_validators.productCoreValidator(dependencies.npm.validator, dependencies.misc.errors)
 
-  productCore = dependencies.core_controllers.productCore(dependencies.models.productModel(dependencies.database), productCoreValidator)
-  userCore = dependencies.core_controllers.userCore(dependencies.models.userModel(dependencies.database), dependencies.npm.async,dependencies.misc.errors, userCoreValidator)
+  productModel = dependencies.models.productModel(dependencies.database)
+  userModel = dependencies.models.userModel(dependencies.database)
+  cartModel = dependencies.models.cartModel(dependencies.database)
+
+
+  productCore = dependencies.core_controllers.productCore(productModel, productCoreValidator)
+  userCore = dependencies.core_controllers.userCore(userModel, dependencies.npm.async,dependencies.misc.errors, userCoreValidator, productModel, cartModel)
 
   models = {
     userModel: dependencies.models.userModel

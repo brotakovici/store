@@ -8,6 +8,7 @@ module.exports = {
   models: {
     userModel: require('./models/user')
     productModel: require('./models/product')
+    cartModel: require('./models/cart')
   }
   # CORE CONTROLLERS
   core_controllers: {

@@ -1,5 +1,8 @@
 module.exports = (User, async, errors, validator, Product, Cart) ->
 
+  addToCart = (id, productId, quantity, done) ->
+    return done('nope')
+
   addToWishlist = (id, productId, done) ->
     User.findOne({'_id': id}, (err, user) ->
       if err
